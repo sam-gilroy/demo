@@ -27,10 +27,9 @@ public class Facility{
     @Column (name = "facilityAvail")
     private boolean facilityAvail;
 
-    @OneToMany (mappedBy = "facility", cascade = CascadeType.ALL,fetch = FetchType.LAZY)
-    @ToString.Exclude
-    private List<Hotel> facility;
-
+    @ManyToOne
+    @JoinColumn (name = "hotel",nullable = false)
+    private Hotel hotel_facilities;
 
     public Long getId() {
         return id;
@@ -56,11 +55,12 @@ public class Facility{
         this.facilityAvail = facilityAvail;
     }
 
-    public List<Hotel> getFacility() {
-        return facility;
+    public Hotel getHotel_facilities() {
+        return hotel_facilities;
     }
 
-    public void setFacility(List<Hotel> facility) {
-        this.facility = facility;
+    public void setHotel_facilities(Hotel hotel_facilities){
+        this.hotel_facilities = this.hotel_facilities;
     }
+
 }

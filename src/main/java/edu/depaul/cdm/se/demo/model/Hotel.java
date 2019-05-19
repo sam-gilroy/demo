@@ -1,22 +1,26 @@
 package edu.depaul.cdm.se.demo.model;
 
+import lombok.ToString;
+
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
+@Table (name = "hotels")
 public class Hotel implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn (name = "facility",nullable = false)
-    private Facility facility;
+    @OneToMany(mappedBy = "hotel_rooms", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @ToString.Exclude
+    private List<RoomType> hotel_rooms;
 
-    @ManyToOne
-    @JoinColumn (name = "roomType",nullable = false)
-    private RoomType roomType;
+    @OneToMany(mappedBy = "hotel_facilities", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @ToString.Exclude
+    private List<Facility> hotel_facilities;
 
     @Column (name = "name")
     private String hotelName;
@@ -32,12 +36,13 @@ public class Hotel implements Serializable {
         this.id = id;
     }
 
-    public RoomType getRoomType() {
-        return roomType;
+
+    public List<RoomType> gethotel_rooms() {
+        return hotel_rooms;
     }
 
-    public void setRoomType(RoomType roomType) {
-        this.roomType = roomType;
+    public void sethotel_rooms(List<RoomType> hotel_rooms) {
+        this.hotel_rooms = hotel_rooms;
     }
 
     public String getHotelName() {
@@ -56,11 +61,12 @@ public class Hotel implements Serializable {
         this.hotelAddress = hotelAddress;
     }
 
-    public Facility getFacility() {
-        return facility;
+
+    public List<Facility> getHotel_facilities() {
+        return hotel_facilities;
     }
 
-    public void setFacility(Facility facility){
-        this.facility = this.facility;
+    public void setHotel_rooms(List<Facility> hotel_facilities) {
+        this.hotel_facilities = hotel_facilities;
     }
 }

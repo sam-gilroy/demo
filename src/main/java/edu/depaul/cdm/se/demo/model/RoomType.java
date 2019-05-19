@@ -29,9 +29,13 @@ public class RoomType{
     @Column (name = "roomRate")
     private Integer roomRate;
 
-    @OneToMany(mappedBy = "roomType", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @ManyToOne
+    @JoinColumn (name = "hotel",nullable = false)
+    private Hotel hotel_rooms;
+
+    @OneToMany(mappedBy = "roomNumberType", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @ToString.Exclude
-    private List<Hotel> roomType;
+    private List<Room> roomNumberType;
 
     public Long getId() {
         return id;
@@ -65,12 +69,20 @@ public class RoomType{
         this.roomRate = roomRate;
     }
 
-    public List<Hotel> getRoomType() {
-        return roomType;
+    public Hotel getHotel_rooms() {
+        return hotel_rooms;
     }
 
-    public void setRoomType(List<Hotel> roomType) {
-        this.roomType = roomType;
+    public void setHotel_rooms(Hotel hotel_rooms) {
+        this.hotel_rooms = hotel_rooms;
+    }
+
+    public List<Room> getRoomNumberType() {
+        return roomNumberType;
+    }
+
+    public void setRoomNumberType(List<Room> roomNumberType) {
+        this.roomNumberType = roomNumberType;
     }
 }
 
