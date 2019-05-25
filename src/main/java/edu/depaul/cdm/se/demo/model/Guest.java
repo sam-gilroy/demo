@@ -1,9 +1,11 @@
 package edu.depaul.cdm.se.demo.model;
 
 import lombok.Data;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Data
 @Entity
@@ -18,6 +20,10 @@ public class Guest implements Serializable {
 
     @Column (name = "email")
     private String guestEmail;
+
+    @OneToMany(mappedBy = "guest_id", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @ToString.Exclude
+    private List<Reservation> guest_id;
 
     public Long getId(){
         return id;
@@ -40,5 +46,13 @@ public class Guest implements Serializable {
 
     public void setGuestEmail(String guestEmail) {
         this.guestEmail = guestEmail;
+    }
+
+    public List<Reservation> getGuest_id() {
+        return guest_id;
+    }
+
+    public void setGuest_id(List<Reservation> guest_id) {
+        this.guest_id = guest_id;
     }
 }

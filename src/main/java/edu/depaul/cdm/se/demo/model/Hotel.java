@@ -28,6 +28,10 @@ public class Hotel implements Serializable {
     @Column (name = "address")
     private String hotelAddress;
 
+    @OneToMany(mappedBy = "hotel_id", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @ToString.Exclude
+    private List<Reservation> hotel_id;
+
     public Long getId() {
         return id;
     }
@@ -36,6 +40,21 @@ public class Hotel implements Serializable {
         this.id = id;
     }
 
+    public List<RoomType> getHotel_rooms() {
+        return hotel_rooms;
+    }
+
+    public void setHotel_facilities(List<Facility> hotel_facilities) {
+        this.hotel_facilities = hotel_facilities;
+    }
+
+    public List<Reservation> getHotel_id() {
+        return hotel_id;
+    }
+
+    public void setHotel_id(List<Reservation> hotel_id) {
+        this.hotel_id = hotel_id;
+    }
 
     public List<RoomType> gethotel_rooms() {
         return hotel_rooms;

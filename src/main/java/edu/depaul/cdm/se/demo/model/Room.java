@@ -17,12 +17,15 @@ public class Room {
     @Column(name = "num")
     private int roomNumber;
 
-    @Column(name = "available")
-    private boolean avail;
+    @OneToOne(mappedBy = "status")
+    private Available status;
 
     @ManyToOne
     @JoinColumn (name = "roomNumberType",nullable = false)
     private RoomType roomNumberType;
+
+    @OneToOne(mappedBy = "roomNum")
+    private Available roomNum;
 
     public Long getId() {
         return id;
@@ -40,12 +43,20 @@ public class Room {
         this.roomNumber = roomNumber;
     }
 
-    public boolean isAvail() {
-        return avail;
+    public Available getStatus() {
+        return status;
     }
 
-    public void setAvail(boolean avail) {
-        this.avail = avail;
+    public void setStatus(Available status) {
+        this.status = status;
+    }
+
+    public Available getRoomNum() {
+        return roomNum;
+    }
+
+    public void setRoomNum(Available roomNum) {
+        this.roomNum = roomNum;
     }
 
     public RoomType getRoomNumberType() {

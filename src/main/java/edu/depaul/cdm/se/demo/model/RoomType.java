@@ -37,6 +37,9 @@ public class RoomType{
     @ToString.Exclude
     private List<Room> roomNumberType;
 
+    @OneToOne(mappedBy = "roomTypeReserve")
+    private Reservation roomTypeReserve;
+
     public Long getId() {
         return id;
     }
@@ -83,6 +86,14 @@ public class RoomType{
 
     public void setRoomNumberType(List<Room> roomNumberType) {
         this.roomNumberType = roomNumberType;
+    }
+
+    public Reservation getRoomTypeReserve() {
+        return roomTypeReserve;
+    }
+
+    public void setRoomTypeReserve(Reservation roomTypeReserve) {
+        this.roomTypeReserve = roomTypeReserve;
     }
 }
 
