@@ -39,22 +39,25 @@
             <td>Quad</td>
             <td>$120</td>
         </tr>
-<table>
-    <thead>
-    <tr>
-        <th>id</th>
-        <th>hotelName</th>
-        <th>hotelName</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="hotel : ${hotelList}">
-        <td th:text="${hotel.id}"></td>
-        <td th:text="${hotel.hotelName}"></td>
-        <td th:text="${hotel.hotelAddress}"></td>
-    </tr>
-    </tbody>
-</table>
+
+        <table>
+            <thead>
+            <tr>
+                <th>id</th>
+                <th>roomSize</th>
+                <th>smoking</th>
+                <th>roomRate</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="rooms : ${roomTypeList}">
+                <td th:text="${rooms.id}"></td>
+                <td th:text="${rooms.roomSize}"></td>
+                <td th:text="${rooms.smoking}"></td>
+                <td th:text="${rooms.roomRate}"></td>
+            </tr>
+            </tbody>
+        </table>
 </body>
 </html>
 </html>
