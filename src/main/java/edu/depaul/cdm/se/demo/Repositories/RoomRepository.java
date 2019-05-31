@@ -1,5 +1,6 @@
-package edu.depaul.cdm.se.demo.model;
+package edu.depaul.cdm.se.demo.Repositories;
 
+import edu.depaul.cdm.se.demo.model.Room;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;

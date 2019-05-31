@@ -1,14 +1,14 @@
 package edu.depaul.cdm.se.demo;
 
-import edu.depaul.cdm.se.demo.model.*;
-import lombok.RequiredArgsConstructor;
+import edu.depaul.cdm.se.demo.Repositories.Hotel_NoSQL_Repo;
+import edu.depaul.cdm.se.demo.model.Hotel_NoSQL;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import edu.depaul.cdm.se.demo.model.FacilityRepository;
+import edu.depaul.cdm.se.demo.Repositories.FacilityRepository;
 
 
 @SpringBootApplication
@@ -30,6 +30,18 @@ public class DemoApplication{
 				log.info(facility.toString());
 			});
 			log.info("");
+		};
+	}
+
+	@Bean
+	public CommandLineRunner noSqlDemo(Hotel_NoSQL_Repo repository) {
+		return (args) -> {
+			// save a review
+			repository.deleteAll();
+			Hotel_NoSQL hotel = new Hotel_NoSQL();
+			hotel.setHotelName("Chicago");
+			hotel.setHotelAddress("1155 N Sheffield Ave., Chicago, IL 60614");
+			repository.save(hotel);
 		};
 	}
 }

@@ -1,0 +1,51 @@
+<html>
+<head>
+    <title>Hotel Reservations</title>
+</head>
+
+<body>
+<h1>Home</h1>
+<a href="create.html"><button>Make A Reservation</button></a><br /><br />
+<a href="edit.html"><button>Check/Edit A Reservation</button></a><br /><br />
+<a href="landing.html"><button>Sign Out</button></a></a><br /><br />
+<p><h3>Pricing per day<h2>
+    <table style="width:30%">
+        <tr>
+            <th>Room Type</th>
+            <th>Price</th>
+        </tr>
+        <tr>
+            <td>Single</td>
+            <td>$90</td>
+        </tr>
+        <tr>
+            <td>Double</td>
+            <td>$100</td>
+        </tr>
+        <tr>
+            <td>Triple</td>
+            <td>$110</td>
+        </tr>
+        <tr>
+            <td>Quad</td>
+            <td>$120</td>
+        </tr>
+<table>
+    <thead>
+    <tr>
+        <th>id</th>
+        <th>hotelName</th>
+        <th>hotelName</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="hotel : ${hotelList}">
+        <td th:text="${hotel.id}"></td>
+        <td th:text="${hotel.hotelName}"></td>
+        <td th:text="${hotel.hotelAddress}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
+</html>
