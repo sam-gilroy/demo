@@ -28,7 +28,7 @@ in IntelliJ -> open git project on side panel click databases and add local data
 ##
 MongoDB
 
-Followed steps from: https://ademirgabardo.wordpress.com/2016/02/02/installing-and-running-mongodb-on-mac-osx-for-beginners/
+Followed steps from lecture 4/15 for remote mongodb atlas
 
 
 How to make contributions?
