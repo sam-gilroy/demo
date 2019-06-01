@@ -24,6 +24,8 @@ mysql> CREATE USER 'hotel'@'localhost' IDENTIFIED BY 'ThePassword';
 
 mysql> GRANT ALL PRIVILEGES ON * . * TO 'hotel'@'localhost';
 
+mysql> USE hotelResApp
+
 ##
 in IntelliJ -> open git project on side panel click databases and add local database using user, password, and database name
 
