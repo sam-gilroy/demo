@@ -18,6 +18,8 @@ mysql> CREATE DATABASE hotelResApp
 
 mysql> USE hotelResApp 
 
+mysql> SELECT user FROM mysql.user GROUP BY user;
+
 mysql> CREATE USER 'hotel'@'localhost' IDENTIFIED BY 'ThePassword'; 
 
 mysql> GRANT ALL PRIVILEGES ON * . * TO 'hotel'@'localhost';
