@@ -23,7 +23,6 @@ public class Home_controller {
         return "home";
     }
 
-
     @RequestMapping("/create")
     public String create() {
         return "create";
@@ -39,4 +38,13 @@ public class Home_controller {
         return "landing";
     }
 
+    @RequestMapping("/login")
+    public String login() {
+        return "login";
+    }
+
+    @RequestMapping("/signup")
+    public String signup() {
+        return "signup";
+    }
 }
