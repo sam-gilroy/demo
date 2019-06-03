@@ -25,14 +25,12 @@
         <thead>
         <tr>
             <th>roomSize</th>
-            <th>smoking</th>
             <th>roomRate</th>
         </tr>
         </thead>
         <tbody>
         <tr th:each="rooms : ${roomTypeList}">
             <td th:text="${rooms.roomSize}"></td>
-            <td th:text="${rooms.smoking}"></td>
             <td th:text="${rooms.roomRate}"></td>
         </tr>
         </tbody>

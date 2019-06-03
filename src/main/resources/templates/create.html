@@ -5,20 +5,18 @@
 <body>
 	<h1>Make A Reservation</h1>
 	<form method="POST" action="home.html">
-		Start Date: <input type="date" name="sdate"><br />
-		End Date: <input type="date" name="edate"><br />
+		Start Date: <input type="date" name="sdate"><br/>
+		End Date: <input type="date" name="edate"><br/>
 		Room Type: <select>
 			<option value="Single">Single</option>
 			<option value="Double">Double</option>
 			<option value="Triple">Triple</option>
 			<option value="Quad">Quad</option>
-		</select><br />
+		</select><br/>
 		Location: <select>
 			<option value="Chicago">Chicago</option>
-			<option value="New York">New York</option>
-			<option value="Los Angeles">Los Angeles</option>
-			<option value="Dallas">Dallas</option>
-		</select><br />
+			<option value="San Francisco">San Francisco</option>
+		</select><br/>
 		<input type="submit" value="Submit">
 	</form>
 	<a th:href="@{home}"><button>Back</button></a>
