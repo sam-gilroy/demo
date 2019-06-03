@@ -1,6 +1,7 @@
+/*
+
 package edu.depaul.cdm.se.demo.Controllers;
-import edu.depaul.cdm.se.demo.Repositories.RoomType_NoSQL_Repo;
-import edu.depaul.cdm.se.demo.model.RoomType_NoSQL;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,17 +10,28 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import edu.depaul.cdm.se.demo.model.Hotel_NoSQL;
+import edu.depaul.cdm.se.demo.Repositories.Hotel_NoSQL_Repo;
+
 
 @Controller
-public class RoomType_NoSQL_controller {
-
+public class Create_controller {
     @Autowired
-    RoomType_NoSQL_Repo roomTypeRepository;
+    Hotel_NoSQL_Repo hotelRepository;
 
     @RequestMapping("/home")
     public String home(Model model) {
-        model.addAttribute("roomTypeList", roomTypeRepository.findAll());
+        model.addAttribute("hotelList", hotelRepository.findAll());
+        return "home";
+    }
+
+
+
+    @RequestMapping("/home")
+    public String home() {
         return "home";
     }
 
 }
+
+ */

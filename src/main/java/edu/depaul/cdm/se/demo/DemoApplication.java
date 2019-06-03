@@ -42,7 +42,6 @@ public class DemoApplication{
 			// save a review
 			repository.deleteAll();
 
-
 			RoomType_NoSQL room1 = new RoomType_NoSQL();
 			room1.setRoomSize("Single");
 			room1.setSmoking(false);
