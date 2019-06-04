@@ -1,3 +1,4 @@
+/*
 create table available (
     id int primary key auto_increment,
     roomNum int,
@@ -5,3 +6,5 @@ create table available (
     departure_dt timestamp default current_timestamp,
     status boolean
 );
+
+ */

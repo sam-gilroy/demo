@@ -17,14 +17,14 @@ public class Room {
     @Column(name = "num")
     private int roomNumber;
 
-    @OneToOne(mappedBy = "status")
+    @OneToOne(mappedBy = "status", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Available status;
 
     @ManyToOne
     @JoinColumn (name = "roomNumberType",nullable = false)
     private RoomType roomNumberType;
 
-    @OneToOne(mappedBy = "roomNum")
+    @OneToOne(mappedBy = "roomNum", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Available roomNum;
 
     public Long getId() {

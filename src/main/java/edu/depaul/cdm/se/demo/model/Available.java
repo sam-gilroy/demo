@@ -2,7 +2,6 @@ package edu.depaul.cdm.se.demo.model;
 
 import lombok.Data;
 import lombok.ToString;
-
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.List;
@@ -31,7 +30,7 @@ public class Available {
     @Column(name="arrival_dt")
     private Timestamp arrivalDateTime;
 
-    @OneToMany(mappedBy = "roomNumAvail", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "roomNumAvail", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @ToString.Exclude
     private List<Confirmation> roomNumAvail;
 

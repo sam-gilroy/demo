@@ -1,3 +1,4 @@
+/*
 CREATE TABLE reservation (
     id int primary key auto_increment,
     guest_id long,
@@ -8,3 +9,5 @@ CREATE TABLE reservation (
     employee_id long,
     hotel_id long
 );
+
+ */

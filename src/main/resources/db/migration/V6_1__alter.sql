@@ -1,3 +1,4 @@
+/*
 CREATE TABLE confirmation (
     id int primary key auto_increment,
     reservation_id long,
@@ -5,3 +6,5 @@ CREATE TABLE confirmation (
     totalOwed int,
     roomNumAvail int
 );
+
+ */

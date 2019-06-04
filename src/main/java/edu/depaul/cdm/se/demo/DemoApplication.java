@@ -78,11 +78,6 @@ public class DemoApplication{
 			hotel.setHotelAddress("1155 N Sheffield Ave., Chicago, IL 60614");
 			repository.save(hotel);
 
-			Hotel_NoSQL hotel2 = new Hotel_NoSQL();
-			hotel2.setHotelName("San Francisco");
-			hotel2.setHotelAddress("651 Market St., San Francisco, CA 94105");
-			repository.save(hotel2);
-
 		};
 	}
 

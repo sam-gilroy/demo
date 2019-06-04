@@ -1,3 +1,4 @@
+/*
 create table guests (
     id int primary key auto_increment,
     name varchar(50),
@@ -15,3 +16,4 @@ CREATE table position (
     id int primary key auto_increment,
     positionName varchar(50)
 );
+ */

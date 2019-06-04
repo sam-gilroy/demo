@@ -1,3 +1,4 @@
+/*
 CREATE TABLE room (
     id int primary key auto_increment,
     num int,
@@ -14,3 +15,4 @@ UPDATE room SET roomNumberType = (select id from roomType where roomSize = 'Sing
 UPDATE room SET roomNumberType = (select id from roomType where roomSize = 'Double') WHERE num = 101;
 UPDATE room SET roomNumberType = (select id from roomType where roomSize = 'Triple') WHERE num = 103;
 UPDATE room SET roomNumberType = (select id from roomType where roomSize = 'Triple') WHERE num = 104;
+*/
