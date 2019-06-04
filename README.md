@@ -2,6 +2,8 @@ Hotel Reservation
 
 Using MYSQL with Springboot, Maven, and IntelliJ
 
+##
+When using MySQL dependency
 Download MySQL Community Edition (GPL) can use: https://dev.mysql.com/downloads/mysql/
 
 get open locally and create hotelResApp db 
@@ -28,6 +30,9 @@ mysql> USE hotelResApp
 
 ##
 in IntelliJ -> open git project on side panel click databases and add local database using user, password, and database name
+
+##
+H2 SQL DB running in http://localhost:8080/h2-console/
 
 ##
 MongoDB
