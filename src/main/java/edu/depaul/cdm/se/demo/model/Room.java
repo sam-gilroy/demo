@@ -1,8 +1,10 @@
 package edu.depaul.cdm.se.demo.model;
 
 import lombok.Data;
+import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @Entity
@@ -26,6 +28,20 @@ public class Room {
 
     @OneToOne(mappedBy = "roomNum", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Available roomNum;
+
+    @OneToMany(mappedBy = "roomNumAvail", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @ToString.Exclude
+    private List<Confirmation> roomNumAvail;
+
+    public List<Confirmation> getRoomNumAvail() {
+        return roomNumAvail;
+    }
+
+    public void setRoomNumAvail(List<Confirmation> roomNumAvail) {
+        this.roomNumAvail = roomNumAvail;
+    }
+
+
 
     public Long getId() {
         return id;

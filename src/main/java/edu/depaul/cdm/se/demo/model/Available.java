@@ -30,17 +30,7 @@ public class Available {
     @Column(name="arrival_dt")
     private Timestamp arrivalDateTime;
 
-    @OneToMany(mappedBy = "roomNumAvail", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @ToString.Exclude
-    private List<Confirmation> roomNumAvail;
 
-    public List<Confirmation> getRoomNumAvail() {
-        return roomNumAvail;
-    }
-
-    public void setRoomNumAvail(List<Confirmation> roomNumAvail) {
-        this.roomNumAvail = roomNumAvail;
-    }
 
     public Long getId() {
         return id;

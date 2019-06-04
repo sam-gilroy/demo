@@ -30,7 +30,7 @@ public class Confirmation {
 
     @ManyToOne
     @JoinColumn(name = "roomNumAvail",nullable = false)
-    private Available roomNumAvail;
+    private Room roomNumAvail;
 
     public Long getId() {
         return id;
@@ -64,11 +64,11 @@ public class Confirmation {
         this.totalOwed = totalOwed;
     }
 
-    public Available getRoomNumAvail() {
+    public Room getRoomNumAvail() {
         return roomNumAvail;
     }
 
-    public void setRoomNumAvail(Available roomNumAvail) {
+    public void setRoomNumAvail(Room roomNumAvail) {
         this.roomNumAvail = roomNumAvail;
     }
 }
