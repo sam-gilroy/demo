@@ -31,7 +31,6 @@ public class Home_controller {
 
     @GetMapping("/create")
     public String create(Model model) {
-
         model.addAttribute("reservation", new Reservation());
         model.addAttribute("roomTypeList", roomTypeRepository.findAll());
         return "create";

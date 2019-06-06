@@ -17,6 +17,9 @@ public class Position {
     @Column (name = "positionName")
     private String positionName;
 
+    @Column (name = "salary")
+    private int salary;
+
     @OneToOne (mappedBy = "position")
     private EmployeeInfo position;
 
@@ -42,5 +45,13 @@ public class Position {
 
     public void setPosition(EmployeeInfo position) {
         this.position = position;
+    }
+
+    public int getSalary() {
+        return salary;
+    }
+
+    public void setSalary(int salary) {
+        this.salary = salary;
     }
 }
