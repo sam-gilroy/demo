@@ -1,10 +1,13 @@
 package edu.depaul.cdm.se.demo.model;
 
+import edu.depaul.cdm.se.demo.Repositories.RoomTypeRepository;
+import edu.depaul.cdm.se.demo.Repositories.RoomType_NoSQL_Repo;
 import lombok.Data;
 import lombok.ToString;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.Date;
 import java.util.List;
 
 @Data
@@ -22,10 +25,10 @@ public class Reservation {
     private Guest guest_id;
 
     @Column(name="dateIn")
-    private Timestamp dateIn;
+    private String dateIn;
 
     @Column(name="dateOut")
-    private Timestamp dateOut;
+    private String dateOut;
 
     @OneToOne
     @JoinColumn(name = "roomTypeReserve",nullable = false)
@@ -70,19 +73,19 @@ public class Reservation {
         this.guest_id = guest_id;
     }
 
-    public Timestamp getDateIn() {
+    public String getDateIn() {
         return dateIn;
     }
 
-    public void setDateIn(Timestamp dateIn) {
+    public void setDateIn(String dateIn) {
         this.dateIn = dateIn;
     }
 
-    public Timestamp getDateOut() {
+    public String getDateOut() {
         return dateOut;
     }
 
-    public void setDateOut(Timestamp dateOut) {
+    public void setDateOut(String dateOut) {
         this.dateOut = dateOut;
     }
 
