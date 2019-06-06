@@ -1,6 +1,11 @@
 package edu.depaul.cdm.se.demo.model;
 
 import org.springframework.data.mongodb.core.mapping.Document;
+import java.util.List;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
 
 @Document(collection = "hotel")
 public class Hotel_NoSQL {
@@ -11,7 +16,15 @@ public class Hotel_NoSQL {
 
     private String hotelAddress;
 
-    public Hotel_NoSQL() {}
+    private List<RoomType_NoSQL> roomType;
+
+    public List<RoomType_NoSQL> getRoomType() {
+        return roomType;
+    }
+
+    public void setRoomType(List<RoomType_NoSQL> roomType) {
+        this.roomType = roomType;
+    }
 
     public String getId() {
         return id;
@@ -36,4 +49,26 @@ public class Hotel_NoSQL {
     public void setHotelAddress(String hotelAddress) {
         this.hotelAddress = hotelAddress;
     }
+
+    public Hotel_NoSQL(String hotelName, String hotelAddress, List<RoomType_NoSQL> roomType) {
+        this.hotelName = hotelName;
+        this.hotelAddress = hotelAddress;
+        this.roomType = roomType;
+    }
+
+    @Override
+    public String toString(){
+        ObjectMapper mapper = new ObjectMapper();
+        String jsonString = "";
+
+        try {
+            mapper.enable(SerializationFeature.INDENT_OUTPUT);
+            jsonString = mapper.writeValueAsString(this);
+        }catch (JsonProcessingException e){
+            e.printStackTrace();
+        }
+
+        return jsonString;
+    }
+
 }

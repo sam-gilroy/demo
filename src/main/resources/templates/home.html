@@ -29,11 +29,12 @@
         </tr>
         </thead>
         <tbody>
-        <tr th:each="rooms : ${roomTypeList}">
-            <td th:text="${rooms.roomSize}"></td>
-            <td th:text="${rooms.roomRate}"></td>
+        <tr th:each="room : ${rooming}">
+            <td th:text="${room.roomSize}"></td>
+            <td th:text="${room.roomRate}"></td>
         </tr>
         </tbody>
     </table>
+
 </body>
 </html>

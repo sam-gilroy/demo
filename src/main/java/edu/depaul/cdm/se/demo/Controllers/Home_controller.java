@@ -17,9 +17,13 @@ public class Home_controller {
     @Autowired
     RoomType_NoSQL_Repo roomTypeRepository;
 
+    @Autowired
+    Hotel_NoSQL_Repo hotelRepo;
+
     @RequestMapping("/home")
     public String home(Model model) {
-        model.addAttribute("roomTypeList", roomTypeRepository.findAll());
+        model.addAttribute("roomTypeList", hotelRepo.findByHotelName("Chicago"));
+        model.addAttribute("rooming", roomTypeRepository.findAll());
         return "home";
     }
 

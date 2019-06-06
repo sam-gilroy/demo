@@ -26,7 +26,11 @@ public class RoomType_NoSQL {
     private Hotel_NoSQL hotel = new Hotel_NoSQL();
     */
 
-    public RoomType_NoSQL() {}
+    public RoomType_NoSQL(String roomSize, boolean smoking, int roomRate) {
+        this.roomRate = roomRate;
+        this.roomSize = roomSize;
+        this.smoking = smoking;
+    }
 
     public String getId() {
         return id;
