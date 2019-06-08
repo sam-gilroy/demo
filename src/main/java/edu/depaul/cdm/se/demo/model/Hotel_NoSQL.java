@@ -20,6 +20,16 @@ public class Hotel_NoSQL {
 
     private List<Position_NoSQL> position;
 
+    private List<Facility_NoSQL> facility;
+
+    public List<Facility_NoSQL> getFacility() {
+        return facility;
+    }
+
+    public void setFacility(List<Facility_NoSQL> facility) {
+        this.facility = facility;
+    }
+
     public List<Position_NoSQL> getPosition() {
         return position;
     }
@@ -60,11 +70,12 @@ public class Hotel_NoSQL {
         this.hotelAddress = hotelAddress;
     }
 
-    public Hotel_NoSQL(String hotelName, String hotelAddress, List<RoomType_NoSQL> roomType, List<Position_NoSQL> position) {
+    public Hotel_NoSQL(String hotelName, String hotelAddress, List<RoomType_NoSQL> roomType, List<Position_NoSQL> position, List<Facility_NoSQL> facility) {
         this.hotelName = hotelName;
         this.hotelAddress = hotelAddress;
         this.roomType = roomType;
         this.position = position;
+        this.facility = facility;
     }
 
     @Override

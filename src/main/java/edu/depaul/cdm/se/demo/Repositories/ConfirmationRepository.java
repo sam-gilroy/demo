@@ -8,5 +8,5 @@ import java.util.List;
 
 @RepositoryRestResource
 public interface ConfirmationRepository extends CrudRepository<Confirmation, Long> {
-        List<Confirmation> findById(long id);
+        List<Confirmation> findAll();
 }

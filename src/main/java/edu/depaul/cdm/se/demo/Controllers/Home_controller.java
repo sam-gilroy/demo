@@ -36,12 +36,12 @@ public class Home_controller {
         return "create";
     }
 
-    @PostMapping("/create")
-    public String createSubmit(@ModelAttribute Reservation reservation) {return "confirm";}
+  //  @PostMapping("/create")
+  //  public String createSubmit(@ModelAttribute Reservation reservation) {return "confirm";}
 
-    @RequestMapping("/edit")
+    @RequestMapping("/confirm")
     public String edit() {
-        return "edit";
+        return "confirm";
     }
 
     @RequestMapping("/landing")

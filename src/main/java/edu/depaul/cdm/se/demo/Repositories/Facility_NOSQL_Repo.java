@@ -8,6 +8,6 @@ import java.util.List;
 
 public interface Facility_NOSQL_Repo extends CrudRepository<Facility_NoSQL, String>{
 
-    List<Facility_NoSQL>  findByFacilityName(String FacilityName);
+    List<Facility_NoSQL> findByFacilityName(String FacilityName);
     List<Facility_NoSQL> findAll();
 }

@@ -1,11 +1,7 @@
 package edu.depaul.cdm.se.demo;
 
-import edu.depaul.cdm.se.demo.Repositories.Hotel_NoSQL_Repo;
-import edu.depaul.cdm.se.demo.Repositories.Position_NoSQL_Repo;
-import edu.depaul.cdm.se.demo.Repositories.RoomType_NoSQL_Repo;
-import edu.depaul.cdm.se.demo.model.Hotel_NoSQL;
-import edu.depaul.cdm.se.demo.model.Position_NoSQL;
-import edu.depaul.cdm.se.demo.model.RoomType_NoSQL;
+import edu.depaul.cdm.se.demo.Repositories.*;
+import edu.depaul.cdm.se.demo.model.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,9 +9,10 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import edu.depaul.cdm.se.demo.Repositories.FacilityRepository;
+import org.thymeleaf.expression.Strings;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 
@@ -52,23 +49,41 @@ public class DemoApplication implements CommandLineRunner{
 	@Autowired
 	Position_NoSQL_Repo position;
 
+	@Autowired
+	Facility_NOSQL_Repo facility;
+
+	@Autowired
+	EmployeeInfo_NoSQL_Repo employee;
 
 	@Override
 	public void run(String... args) throws Exception{
 		repository.deleteAll();
 		rooming.deleteAll();
 		position.deleteAll();
-		position.saveAll(Arrays.asList(new Position_NoSQL("Manager", 50000),
-				new Position_NoSQL("Cook", 50000),
-				new Position_NoSQL("Front Desk", 25000),
-				new Position_NoSQL("House Keeping", 35000)));
+		facility.deleteAll();
+		employee.deleteAll();
+		employee.saveAll(Arrays.asList(new EmployeeInfo_NoSQL("Peter June", "pjune@hotels.com"),
+				(new EmployeeInfo_NoSQL("Cici Leader", "cleader@hotels.com")),
+				(new EmployeeInfo_NoSQL("Carrie Austin", "caustin@hotels.com")),
+				new EmployeeInfo_NoSQL("Austin James", "ajames@hotels.com")));
+
+		List<EmployeeInfo_NoSQL> managers = Arrays.asList(employee.findAllByEmployeeName("Peter June"));
+		List<EmployeeInfo_NoSQL> cooks = Arrays.asList(employee.findAllByEmployeeName("Cici Leader"));
+		List<EmployeeInfo_NoSQL> frontDesk = Arrays.asList(employee.findAllByEmployeeName("Carrie Austin"), employee.findAllByEmployeeName("Austin James"));
+		List<EmployeeInfo_NoSQL> houseKeeping = Arrays.asList(employee.findAllByEmployeeName(""));
+
+		facility.saveAll(Arrays.asList(new Facility_NoSQL("Pool", true)));
+		position.saveAll(Arrays.asList(new Position_NoSQL("Manager", 50000, managers),
+				new Position_NoSQL("Cook", 50000, cooks),
+				new Position_NoSQL("Front Desk", 25000, frontDesk),
+				new Position_NoSQL("House Keeping", 35000, houseKeeping)));
 		rooming.saveAll(Arrays.asList(new RoomType_NoSQL("Single", false, 90),
 				new RoomType_NoSQL("Double",false,100),
 				new RoomType_NoSQL("Triple",false,110),
 				new RoomType_NoSQL("Quad", false,120)));
 		repository.saveAll(Arrays.asList(
 				new Hotel_NoSQL("Chicago", "1155 N Sheffield Ave., Chicago, IL 60614",
-						rooming.findAll(), position.findAll())));
+						rooming.findAll(), position.findAll(), facility.findAll())));
 
 		List<Hotel_NoSQL> hotels = null;
 

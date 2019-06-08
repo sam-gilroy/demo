@@ -6,10 +6,26 @@
 </head>
 <body>
 <h1>Reservation Confirmation</h1>
-<table>
-    <tr>
-        <td></td>
-    </tr>
-</table>
+<div>
+    <table id="confirmationLists" class="table">
+        <thead>
+        <tr>
+            <th scope="col"> Reservation Number </th>
+            <th scope="col"> Guest ID </th>
+            <th scope="col"> Total Cost </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:if="${confirmation.empty}">
+            <td colspan="2"> No Reservations Available </td>
+        </tr>
+        <tr th:each="confirm : ${confirmation}">
+            <td span th:text="${confirm.reservation_id}"></td>
+            <td span th:text="${confirm.guest_id}"></td>
+            <td span th:text="${confirm.totalOwed}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
 </body>
 </html>
