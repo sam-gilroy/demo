@@ -1,3 +1,4 @@
+/*
 package edu.depaul.cdm.se.demo.Controllers;
 
 import edu.depaul.cdm.se.demo.model.Facility;
@@ -22,3 +23,5 @@ public class Facility_controller {
         return repo.findAll().stream().collect(Collectors.toList());
     }
 }
+
+ */

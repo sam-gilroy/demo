@@ -50,7 +50,7 @@ CREATE TABLE room (
 
 create table available (
                            id int primary key auto_increment,
-                           room_number int,
+                           room_Num int,
                            arrival_dt timestamp,
                            departure_dt timestamp,
                            status boolean

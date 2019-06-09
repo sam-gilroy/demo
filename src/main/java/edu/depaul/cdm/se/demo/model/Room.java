@@ -26,20 +26,20 @@ public class Room {
     @JoinColumn (name = "room_Number_Type",nullable = false)
     private Room_Type room_Number_Type;
 
-    @OneToMany(mappedBy = "roomNum", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "room_Num", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @ToString.Exclude
-    private List<Available> roomNum;
+    private List<Available> room_Num;
 
-    @OneToMany(mappedBy = "roomNumAvail", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "room_Num_Avail", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @ToString.Exclude
-    private List<Confirmation> roomNumAvail;
+    private List<Confirmation> room_Num_Avail;
 
-    public List<Confirmation> getRoomNumAvail() {
-        return roomNumAvail;
+    public List<Confirmation> getRoom_Num_Avail() {
+        return room_Num_Avail;
     }
 
-    public void setRoomNumAvail(List<Confirmation> roomNumAvail) {
-        this.roomNumAvail = roomNumAvail;
+    public void setRoom_Num_Avail(List<Confirmation> room_Num_Avail) {
+        this.room_Num_Avail = room_Num_Avail;
     }
 
 
@@ -68,12 +68,12 @@ public class Room {
         this.status = status;
     }
 
-    public List<Available> getRoomNum() {
-        return roomNum;
+    public List<Available> getRoom_Num() {
+        return room_Num;
     }
 
-    public void setRoomNum(List<Available> roomNum) {
-        this.roomNum = roomNum;
+    public void setRoom_Num(List<Available> room_Num) {
+        this.room_Num = room_Num;
     }
 
     public Room_Type getRoom_Number_Type() {

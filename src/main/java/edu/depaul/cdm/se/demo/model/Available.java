@@ -21,8 +21,8 @@ public class Available {
     private Room status;
 
     @ManyToOne
-    @JoinColumn (name = "roomNum",nullable = false)
-    private Room roomNum;
+    @JoinColumn (name = "room_Num",nullable = false)
+    private Room room_Num;
 
     @Column(name="departure_dt")
     private Timestamp departure_Date_Time;
@@ -49,11 +49,11 @@ public class Available {
     }
 
     public Room getRoom_Num() {
-        return roomNum;
+        return room_Num;
     }
 
     public void setRoom_Num(Room room_Num) {
-        this.roomNum = room_Num;
+        this.room_Num = room_Num;
     }
 
     public Timestamp getDeparture_Date_Time() {

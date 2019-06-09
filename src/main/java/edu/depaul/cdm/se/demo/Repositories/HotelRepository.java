@@ -7,6 +7,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import java.util.List;
 
 @RepositoryRestResource
+
 public interface HotelRepository extends CrudRepository<Hotel,Long> {
     List<Hotel> findByHotelName(String HotelName);
     List<Hotel> findAll();

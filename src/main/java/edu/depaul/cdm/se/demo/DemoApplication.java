@@ -189,7 +189,7 @@ public class DemoApplication implements CommandLineRunner{
 
 
 	@Autowired
-	Hotel_NoSQL_Repo repository;
+	Hotel_NoSQL_Repo hotelrepo;
 
 	@Autowired
 	Position_NoSQL_Repo position;
@@ -202,7 +202,7 @@ public class DemoApplication implements CommandLineRunner{
 
 	@Override
 	public void run(String... args) throws Exception{
-		repository.deleteAll();
+		hotelrepo.deleteAll();
 		rooming.deleteAll();
 		position.deleteAll();
 		facility.deleteAll();
@@ -226,13 +226,13 @@ public class DemoApplication implements CommandLineRunner{
 				new RoomType_NoSQL("Double",false,100),
 				new RoomType_NoSQL("Triple",false,110),
 				new RoomType_NoSQL("Quad", false,120)));
-		repository.saveAll(Arrays.asList(
+		hotelrepo.saveAll(Arrays.asList(
 				new Hotel_NoSQL("Chicago", "1155 N Sheffield Ave., Chicago, IL 60614",
 						rooming.findAll(), position.findAll(), facility.findAll())));
 
 		List<Hotel_NoSQL> hotels = null;
 
-		hotels = repository.findAll();
+		hotels = hotelrepo.findAll();
 		hotels.forEach((System.out::println));
 	}
 

@@ -5,6 +5,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import java.util.List;
 
+
 @RepositoryRestResource
 public interface FacilityRepository extends CrudRepository<Facility,Long>{
 
