@@ -20,8 +20,8 @@ public class Available {
     @JoinColumn(name = "status",nullable = false)
     private Room status;
 
-    @OneToOne
-    @JoinColumn(name = "room_Number",nullable = false, unique = true)
+    @ManyToOne
+    @JoinColumn (name = "roomNum",nullable = false)
     private Room roomNum;
 
     @Column(name="departure_dt")

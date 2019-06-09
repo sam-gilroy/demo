@@ -26,8 +26,9 @@ public class Room {
     @JoinColumn (name = "room_Number_Type",nullable = false)
     private Room_Type room_Number_Type;
 
-    @OneToOne(mappedBy = "roomNum", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private Available roomNum;
+    @OneToMany(mappedBy = "roomNum", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @ToString.Exclude
+    private List<Available> roomNum;
 
     @OneToMany(mappedBy = "roomNumAvail", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @ToString.Exclude
@@ -67,11 +68,11 @@ public class Room {
         this.status = status;
     }
 
-    public Available getRoomNum() {
+    public List<Available> getRoomNum() {
         return roomNum;
     }
 
-    public void setRoomNum(Available roomNum) {
+    public void setRoomNum(List<Available> roomNum) {
         this.roomNum = roomNum;
     }
 
