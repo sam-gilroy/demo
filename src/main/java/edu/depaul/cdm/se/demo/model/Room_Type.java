@@ -37,7 +37,7 @@ public class Room_Type{
     @ToString.Exclude
     private List<Room> room_Number_Type;
 
-    @OneToMany(mappedBy = "roomTypeReserve", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "room_Type_Reserve", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Reservation> roomTypeReserve;
 
     public Long getId() {

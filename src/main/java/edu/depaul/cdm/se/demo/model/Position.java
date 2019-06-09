@@ -16,7 +16,7 @@ public class Position {
     private Long id;
 
     @Column (name = "position_Name")
-    private String position_Name;
+    private String positionName;
 
     @Column (name = "salary")
     private int salary;
@@ -33,11 +33,11 @@ public class Position {
     }
 
     public String getPosition_Name() {
-        return position_Name;
+        return positionName;
     }
 
     public void setPosition_Name(String position_Name) {
-        this.position_Name = position_Name;
+        this.positionName = position_Name;
     }
 
     public EmployeeInfo getPosition_id() {
