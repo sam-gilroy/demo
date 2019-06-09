@@ -12,7 +12,7 @@ import java.util.List;
 
 @Data
 @Entity
-@Table(name = "reserve")
+@Table(name = "reservation")
 public class Reservation {
     private static final long serialVersionUID = 1L;
 
@@ -30,7 +30,7 @@ public class Reservation {
     @Column(name="dateOut")
     private String dateOut;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "roomTypeReserve",nullable = false)
     private Room_Type roomTypeReserve;
 

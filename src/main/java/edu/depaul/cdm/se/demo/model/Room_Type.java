@@ -33,12 +33,12 @@ public class Room_Type{
     @JoinColumn (name = "hotel",nullable = false)
     private Hotel hotel_rooms;
 
-    @OneToMany(mappedBy = "room_Number_Type", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany (mappedBy = "room_Number_Type", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @ToString.Exclude
     private List<Room> room_Number_Type;
 
-    @OneToOne(mappedBy = "roomTypeReserve")
-    private Reservation roomTypeReserve;
+    @OneToMany(mappedBy = "roomTypeReserve", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<Reservation> roomTypeReserve;
 
     public Long getId() {
         return id;
@@ -88,11 +88,11 @@ public class Room_Type{
         this.room_Number_Type = room_Number_Type;
     }
 
-    public Reservation getRoomTypeReserve() {
+    public List<Reservation> getRoomTypeReserve() {
         return roomTypeReserve;
     }
 
-    public void setRoomTypeReserve(Reservation roomTypeReserve) {
+    public void setRoomTypeReserve(List<Reservation> roomTypeReserve) {
         this.roomTypeReserve = roomTypeReserve;
     }
 }

@@ -1,6 +1,7 @@
 package edu.depaul.cdm.se.demo.model;
 
 import lombok.Data;
+import lombok.ToString;
 
 import javax.persistence.*;
 
@@ -20,8 +21,8 @@ public class Position {
     @Column (name = "salary")
     private int salary;
 
-    @OneToOne (mappedBy = "position")
-    private EmployeeInfo position;
+    @OneToOne(mappedBy = "position_id", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private EmployeeInfo position_id;
 
     public Long getId() {
         return id;
@@ -39,12 +40,12 @@ public class Position {
         this.positionName = positionName;
     }
 
-    public EmployeeInfo getPosition() {
-        return position;
+    public EmployeeInfo getPosition_id() {
+        return position_id;
     }
 
-    public void setPosition(EmployeeInfo position) {
-        this.position = position;
+    public void setPosition_id(EmployeeInfo position_id) {
+        this.position_id = position_id;
     }
 
     public int getSalary() {

@@ -27,6 +27,7 @@ public class DemoApplication implements CommandLineRunner{
 
 	private static final Logger log = LoggerFactory.getLogger(DemoApplication.class);
 
+	/*
 	@Autowired
 	FacilityRepository facRep;
 	AvailableRepository avaRep;
@@ -39,6 +40,8 @@ public class DemoApplication implements CommandLineRunner{
 	RoomTypeRepository rtRep;
 	RoomRepository roomRep;
 
+	 */
+
 
 	@Bean
 	public CommandLineRunner demoroom(RoomRepository repository) {
@@ -46,7 +49,7 @@ public class DemoApplication implements CommandLineRunner{
 			log.info("room found with findAll():");
 			log.info("-------------------------------");
 			repository.findAll().forEach((room) -> {
-				log.info(room.toString());
+				//log.info(room.toString());
 			});
 			log.info("");
 		};
@@ -58,7 +61,7 @@ public class DemoApplication implements CommandLineRunner{
 			log.info("roomType found with findAll():");
 			log.info("-------------------------------");
 			repository.findAll().forEach((roomType) -> {
-				log.info(roomType.toString());
+			//	log.info(roomType.toString());
 			});
 			log.info("");
 		};
@@ -70,7 +73,7 @@ public class DemoApplication implements CommandLineRunner{
 			log.info("Facilities found with findAll():");
 			log.info("-------------------------------");
 			repository.findAll().forEach((facility) -> {
-				log.info(facility.toString());
+			//	log.info(facility.toString());
 			});
 			log.info("");
 		};
@@ -82,7 +85,7 @@ public class DemoApplication implements CommandLineRunner{
 			log.info("Available found with findAll():");
 			log.info("-------------------------------");
 			repository.findAll().forEach((available) -> {
-				log.info(available.toString());
+			//	log.info(available.toString());
 			});
 			log.info("");
 		};
@@ -94,7 +97,7 @@ public class DemoApplication implements CommandLineRunner{
 			log.info("confirmation found with findAll():");
 			log.info("-------------------------------");
 			repository.findAll().forEach((confirmation) -> {
-				log.info(confirmation.toString());
+			//	log.info(confirmation.toString());
 			});
 			log.info("");
 		};
@@ -106,7 +109,7 @@ public class DemoApplication implements CommandLineRunner{
 			log.info("employeeInfo found with findAll():");
 			log.info("-------------------------------");
 			repository.findAll().forEach((employeeInfo) -> {
-				log.info(employeeInfo.toString());
+			//	log.info(employeeInfo.toString());
 			});
 			log.info("");
 		};
@@ -118,7 +121,7 @@ public class DemoApplication implements CommandLineRunner{
 			log.info("guest found with findAll():");
 			log.info("-------------------------------");
 			repository.findAll().forEach((guest) -> {
-				log.info(guest.toString());
+			//	log.info(guest.toString());
 			});
 			log.info("");
 		};
@@ -130,7 +133,7 @@ public class DemoApplication implements CommandLineRunner{
 			log.info("hotel found with findAll():");
 			log.info("-------------------------------");
 			repository.findAll().forEach((hotel) -> {
-				log.info(hotel.toString());
+			//	log.info(hotel.toString());
 			});
 			log.info("");
 		};
@@ -142,7 +145,7 @@ public class DemoApplication implements CommandLineRunner{
 			log.info("position found with findAll():");
 			log.info("-------------------------------");
 			repository.findAll().forEach((position) -> {
-				log.info(position.toString());
+			//	log.info(position.toString());
 			});
 			log.info("");
 		};
@@ -154,7 +157,7 @@ public class DemoApplication implements CommandLineRunner{
 			log.info("reservation found with findAll():");
 			log.info("-------------------------------");
 			repository.findAll().forEach((reservation) -> {
-				log.info(reservation.toString());
+			//	log.info(reservation.toString());
 			});
 			log.info("");
 		};

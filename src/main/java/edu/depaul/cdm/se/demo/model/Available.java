@@ -8,7 +8,7 @@ import java.util.List;
 
 @Data
 @Entity
-@Table(name = "availRooms")
+@Table(name = "available")
 public class Available {
     private static final long serialVersionUID = 1L;
 
@@ -21,7 +21,7 @@ public class Available {
     private Room status;
 
     @OneToOne
-    @JoinColumn(name = "roomNumber",nullable = false, unique = true)
+    @JoinColumn(name = "room_Number",nullable = false, unique = true)
     private Room roomNum;
 
     @Column(name="departure_dt")
