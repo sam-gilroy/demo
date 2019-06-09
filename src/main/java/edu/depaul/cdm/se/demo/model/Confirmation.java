@@ -31,7 +31,6 @@ public class Confirmation {
 
     @ManyToOne
     @JoinColumn(name = "room_Num_Avail")
-
     private Room room_Num_Avail;
 
     public Long getId() {

@@ -10,7 +10,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-@Data
+
 @Entity
 @Table(name = "room_type")
 public class Room_Type{
