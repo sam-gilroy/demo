@@ -30,7 +30,7 @@ public class Room {
     @ToString.Exclude
     private List<Available> roomNum;
 
-    @OneToMany(mappedBy = "roomNumAvail", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "room_Num_Avail", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @ToString.Exclude
     private List<Confirmation> roomNumAvail;
 

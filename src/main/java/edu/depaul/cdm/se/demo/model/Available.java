@@ -21,7 +21,7 @@ public class Available {
     private Room status;
 
     @ManyToOne
-    @JoinColumn (name = "roomNum",nullable = false)
+    @JoinColumn (name = "room_Num",nullable = false)
     private Room roomNum;
 
     @Column(name="departure_dt")
