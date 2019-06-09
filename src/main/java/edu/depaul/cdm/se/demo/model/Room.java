@@ -8,7 +8,7 @@ import java.util.List;
 
 @Data
 @Entity
-@Table(name = "roomNumbers")
+@Table(name = "room_Numbers")
 public class Room {
     private static final long serialVersionUID = 1L;
 
@@ -23,22 +23,22 @@ public class Room {
     private Available status;
 
     @ManyToOne
-    @JoinColumn (name = "roomNumberType",nullable = false)
-    private RoomType roomNumberType;
+    @JoinColumn (name = "room_Number_Type",nullable = false)
+    private RoomType room_Number_Type;
 
     @OneToOne(mappedBy = "roomNum", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private Available roomNum;
+    private Available room_Num;
 
-    @OneToMany(mappedBy = "roomNumAvail", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "room_Num_Avail", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @ToString.Exclude
-    private List<Confirmation> roomNumAvail;
+    private List<Confirmation> room_Num_Avail;
 
-    public List<Confirmation> getRoomNumAvail() {
-        return roomNumAvail;
+    public List<Confirmation> getRoom_Num_Avail() {
+        return room_Num_Avail;
     }
 
-    public void setRoomNumAvail(List<Confirmation> roomNumAvail) {
-        this.roomNumAvail = roomNumAvail;
+    public void setRoom_Num_Avail(List<Confirmation> room_Num_Avail) {
+        this.room_Num_Avail = room_Num_Avail;
     }
 
 
@@ -51,12 +51,12 @@ public class Room {
         this.id = id;
     }
 
-    public int getRoomNumber() {
+    public int getRoom_Number() {
         return roomNumber;
     }
 
-    public void setRoomNumber(int roomNumber) {
-        this.roomNumber = roomNumber;
+    public void setRoom_Number(int room_Number) {
+        this.roomNumber = room_Number;
     }
 
     public Available getStatus() {
@@ -67,19 +67,19 @@ public class Room {
         this.status = status;
     }
 
-    public Available getRoomNum() {
-        return roomNum;
+    public Available getRoom_Num() {
+        return room_Num;
     }
 
-    public void setRoomNum(Available roomNum) {
-        this.roomNum = roomNum;
+    public void setRoom_Num(Available room_Num) {
+        this.room_Num = room_Num;
     }
 
-    public RoomType getRoomNumberType() {
-        return roomNumberType;
+    public RoomType getRoom_Number_Type() {
+        return room_Number_Type;
     }
 
-    public void setRoomNumberType(RoomType roomNumberType) {
-        this.roomNumberType = roomNumberType;
+    public void setRoom_Number_Type(RoomType room_Number_Type) {
+        this.room_Number_Type = room_Number_Type;
     }
 }

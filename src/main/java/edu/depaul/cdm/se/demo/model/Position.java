@@ -14,8 +14,8 @@ public class Position {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column (name = "positionName")
-    private String positionName;
+    @Column (name = "position_Name")
+    private String position_Name;
 
     @Column (name = "salary")
     private int salary;
@@ -31,12 +31,12 @@ public class Position {
         this.id = id;
     }
 
-    public String getPositionName() {
-        return positionName;
+    public String getPosition_Name() {
+        return position_Name;
     }
 
-    public void setPositionName(String positionName) {
-        this.positionName = positionName;
+    public void setPosition_Name(String position_Name) {
+        this.position_Name = position_Name;
     }
 
     public EmployeeInfo getPosition() {

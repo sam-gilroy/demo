@@ -1,13 +1,9 @@
 package edu.depaul.cdm.se.demo.model;
 
-import edu.depaul.cdm.se.demo.Repositories.RoomTypeRepository;
-import edu.depaul.cdm.se.demo.Repositories.RoomType_NoSQL_Repo;
 import lombok.Data;
 import lombok.ToString;
 
 import javax.persistence.*;
-import java.sql.Timestamp;
-import java.util.Date;
 import java.util.List;
 
 @Data
@@ -24,18 +20,18 @@ public class Reservation {
     @JoinColumn (name = "guest_id",nullable = false)
     private Guest guest_id;
 
-    @Column(name="dateIn")
-    private String dateIn;
+    @Column(name="date_In")
+    private String date_In;
 
-    @Column(name="dateOut")
-    private String dateOut;
+    @Column(name="date_Out")
+    private String date_Out;
 
     @OneToOne
-    @JoinColumn(name = "roomTypeReserve",nullable = false)
-    private RoomType roomTypeReserve;
+    @JoinColumn(name = "room_Type_Reserve",nullable = false)
+    private RoomType room_Type_Reserve;
 
-    @Column (name = "amountTotal")
-    private int amountTotal;
+    @Column (name = "amount__Total")
+    private int amount_Total;
 
     @ManyToOne
     @JoinColumn (name = "employee_id",nullable = true)
@@ -73,36 +69,36 @@ public class Reservation {
         this.guest_id = guest_id;
     }
 
-    public String getDateIn() {
-        return dateIn;
+    public String getDate_In() {
+        return date_In;
     }
 
-    public void setDateIn(String dateIn) {
-        this.dateIn = dateIn;
+    public void setDate_In(String date_In) {
+        this.date_In = date_In;
     }
 
-    public String getDateOut() {
-        return dateOut;
+    public String getDate_Out() {
+        return date_Out;
     }
 
-    public void setDateOut(String dateOut) {
-        this.dateOut = dateOut;
+    public void setDate_Out(String date_Out) {
+        this.date_Out = date_Out;
     }
 
-    public RoomType getRoomTypeReserve() {
-        return roomTypeReserve;
+    public RoomType getRoom_Type_Reserve() {
+        return room_Type_Reserve;
     }
 
-    public void setRoomTypeReserve(RoomType roomTypeReserve) {
-        this.roomTypeReserve = roomTypeReserve;
+    public void setRoom_Type_Reserve(RoomType room_Type_Reserve) {
+        this.room_Type_Reserve = room_Type_Reserve;
     }
 
-    public int getAmountTotal() {
-        return amountTotal;
+    public int getAmount_Total() {
+        return amount_Total;
     }
 
-    public void setAmountTotal(int amountTotal) {
-        this.amountTotal = amountTotal;
+    public void setAmount_Total(int amount_Total) {
+        this.amount_Total = amount_Total;
     }
 
     public EmployeeInfo getEmployee_id() {

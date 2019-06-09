@@ -21,10 +21,10 @@ public class Facility{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column (name = "facilityName")
+    @Column (name = "facility_Name")
     private String facilityName;
 
-    @Column (name = "facilityAvail")
+    @Column (name = "facility_Avail")
     private boolean facilityAvail;
 
     @ManyToOne
@@ -39,20 +39,20 @@ public class Facility{
         this.id = id;
     }
 
-    public String getFacilityName() {
+    public String getFacility_Name() {
         return facilityName;
     }
 
-    public void setFacilityName(String facilityName) {
-        this.facilityName = facilityName;
+    public void setFacility_Name(String facility_Name) {
+        this.facilityName = facility_Name;
     }
 
-    public boolean isFacilityAvail() {
+    public boolean isFacility_Avail() {
         return facilityAvail;
     }
 
-    public void setFacilityAvail(boolean facilityAvail) {
-        this.facilityAvail = facilityAvail;
+    public void setFacility_Avail(boolean facility_Avail) {
+        this.facilityAvail = facility_Avail;
     }
 
     public Hotel getHotel_facilities() {

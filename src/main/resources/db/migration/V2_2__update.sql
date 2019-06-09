@@ -1,10 +1,10 @@
 update facility set hotel = (select id from hotels where name = 'Chicago');
 update room_Type set hotel = (select id from hotels where name = 'Chicago');
 
-UPDATE employeeInfo SET position = (select id from position where positionName = 'Manager') WHERE id = 1;
-UPDATE employeeInfo SET position = (select id from position where positionName = 'Front Desk') WHERE id = 3;
-UPDATE employeeInfo SET position = (select id from position where positionName = 'Front Desk') WHERE id = 4;
-UPDATE employeeInfo SET position = (select id from position where positionName = 'Cook') WHERE id = 2;
+UPDATE employee_Info SET position = (select id from position where position_Name = 'Manager') WHERE id = 1;
+UPDATE employee_Info SET position = (select id from position where position_Name = 'Front Desk') WHERE id = 3;
+UPDATE employee_Info SET position = (select id from position where position_Name = 'Front Desk') WHERE id = 4;
+UPDATE employee_Info SET position = (select id from position where position_Name = 'Cook') WHERE id = 2;
 
 UPDATE room SET room_Number_Type = (select id from room_Type where room_Size = 'Single') WHERE num = 101;
 UPDATE room SET room_Number_Type = (select id from room_Type where room_Size = 'Double') WHERE num = 102;
@@ -17,10 +17,10 @@ UPDATE reservation SET room_Type_Reserve = (select id from room_Type where room_
 UPDATE reservation SET room_Type_Reserve = (select id from room_Type where room_Size = 'Quad') WHERE id = 4;
 UPDATE reservation SET room_Type_Reserve = (select id from room_Type where room_Size = 'Quad') WHERE id = 5;
 
-UPDATE reservation SET amount_Total = (select roomRate from room_Type where room_Size = 'Single') WHERE room_Type_Reserve = 1;
-UPDATE reservation SET amount_Total = (select roomRate from room_Type where room_Size = 'Double') WHERE room_Type_Reserve = 2;
-UPDATE reservation SET amount_Total = (select roomRate from room_Type where room_Size = 'Triple') WHERE room_Type_Reserve = 3;
-UPDATE reservation SET amount_Total = (select roomRate from room_Type where room_Size = 'Quad') WHERE room_Type_Reserve = 4;
+UPDATE reservation SET amount_Total = (select room_Rate from room_Type where room_Size = 'Single') WHERE room_Type_Reserve = 1;
+UPDATE reservation SET amount_Total = (select room_Rate from room_Type where room_Size = 'Double') WHERE room_Type_Reserve = 2;
+UPDATE reservation SET amount_Total = (select room_Rate from room_Type where room_Size = 'Triple') WHERE room_Type_Reserve = 3;
+UPDATE reservation SET amount_Total = (select room_Rate from room_Type where room_Size = 'Quad') WHERE room_Type_Reserve = 4;
 
 UPDATE reservation SET hotel_id = (select id from hotels);
 

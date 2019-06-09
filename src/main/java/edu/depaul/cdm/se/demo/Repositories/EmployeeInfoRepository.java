@@ -9,6 +9,6 @@ import java.util.List;
 
 @RepositoryRestResource
 public interface EmployeeInfoRepository extends CrudRepository<EmployeeInfo, Long> {
-    List<EmployeeInfo> findByEmployeeName(String EmployeeName);
+    List<EmployeeInfo> findByName(String Name);
     List<EmployeeInfo> findAll();
 }

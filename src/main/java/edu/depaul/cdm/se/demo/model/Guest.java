@@ -19,7 +19,7 @@ public class Guest implements Serializable {
     private String guestName;
 
     @Column (name = "email")
-    private String guestEmail;
+    private String guest_Email;
 
     @OneToMany(mappedBy = "guest_id", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @ToString.Exclude
@@ -32,20 +32,20 @@ public class Guest implements Serializable {
         this.id = id;
     }
 
-    public String getGuestName() {
+    public String getGuest_Name() {
         return guestName;
     }
 
-    public void setGuestName(String guestName) {
-        this.guestName = guestName;
+    public void setGuest_Name(String guest_Name) {
+        this.guestName = guest_Name;
     }
 
-    public String getGuestEmail() {
-        return guestEmail;
+    public String getGuest_Email() {
+        return guest_Email;
     }
 
-    public void setGuestEmail(String guestEmail) {
-        this.guestEmail = guestEmail;
+    public void setGuest_Email(String guest_Email) {
+        this.guest_Email = guest_Email;
     }
 
     public List<Reservation> getGuest_id() {

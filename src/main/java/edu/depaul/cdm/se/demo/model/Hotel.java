@@ -26,7 +26,7 @@ public class Hotel implements Serializable {
     private String hotelName;
 
     @Column (name = "address")
-    private String hotelAddress;
+    private String hotel_Address;
 
     @OneToMany(mappedBy = "hotel_id", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @ToString.Exclude
@@ -64,20 +64,20 @@ public class Hotel implements Serializable {
         this.hotel_rooms = hotel_rooms;
     }
 
-    public String getHotelName() {
+    public String getHotel_Name() {
         return hotelName;
     }
 
-    public void setHotelName(String hotelName) {
-        this.hotelName = hotelName;
+    public void setHotel_Name(String hotel_Name) {
+        this.hotelName = hotel_Name;
     }
 
-    public String getHotelAddress() {
-        return hotelAddress;
+    public String getHotel_Address() {
+        return hotel_Address;
     }
 
-    public void setHotelAddress(String hotelAddress) {
-        this.hotelAddress = hotelAddress;
+    public void setHotel_Address(String hotel_Address) {
+        this.hotel_Address = hotel_Address;
     }
 
 

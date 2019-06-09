@@ -20,25 +20,25 @@ public class RoomType{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column (name = "roomSize")
+    @Column (name = "room_Size")
     private String roomSize;
 
     @Column (name = "smoking")
     private boolean smoking;
 
-    @Column (name = "roomRate")
-    private Integer roomRate;
+    @Column (name = "room_Rate")
+    private Integer room_Rate;
 
     @ManyToOne
     @JoinColumn (name = "hotel",nullable = false)
     private Hotel hotel_rooms;
 
-    @OneToMany(mappedBy = "roomNumberType", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "room_Number_Type", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @ToString.Exclude
-    private List<Room> roomNumberType;
+    private List<Room> room_Number_Type;
 
-    @OneToOne(mappedBy = "roomTypeReserve")
-    private Reservation roomTypeReserve;
+    @OneToOne(mappedBy = "room_Type_Reserve")
+    private Reservation room_Type_Reserve;
 
     public Long getId() {
         return id;
@@ -48,12 +48,12 @@ public class RoomType{
         this.id = id;
     }
 
-    public String getRoomSize() {
+    public String getRoom_Size() {
         return roomSize;
     }
 
-    public void setRoomSize(String roomSize) {
-        this.roomSize = roomSize;
+    public void setRoom_Size(String room_Size) {
+        this.roomSize = room_Size;
     }
 
     public boolean isSmoking() {
@@ -64,12 +64,12 @@ public class RoomType{
         this.smoking = smoking;
     }
 
-    public Integer getRoomRate() {
-        return roomRate;
+    public Integer getRoom_Rate() {
+        return room_Rate;
     }
 
-    public void setRoomRate(Integer roomRate) {
-        this.roomRate = roomRate;
+    public void setRoom_Rate(Integer room_Rate) {
+        this.room_Rate = room_Rate;
     }
 
     public Hotel getHotel_rooms() {
@@ -80,20 +80,20 @@ public class RoomType{
         this.hotel_rooms = hotel_rooms;
     }
 
-    public List<Room> getRoomNumberType() {
-        return roomNumberType;
+    public List<Room> getRoom_Number_Type() {
+        return room_Number_Type;
     }
 
-    public void setRoomNumberType(List<Room> roomNumberType) {
-        this.roomNumberType = roomNumberType;
+    public void setRoom_Number_Type(List<Room> room_Number_Type) {
+        this.room_Number_Type = room_Number_Type;
     }
 
-    public Reservation getRoomTypeReserve() {
-        return roomTypeReserve;
+    public Reservation getRoom_Type_Reserve() {
+        return room_Type_Reserve;
     }
 
-    public void setRoomTypeReserve(Reservation roomTypeReserve) {
-        this.roomTypeReserve = roomTypeReserve;
+    public void setRoom_Type_Reserve(Reservation room_Type_Reserve) {
+        this.room_Type_Reserve = room_Type_Reserve;
     }
 }
 

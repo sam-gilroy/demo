@@ -8,7 +8,7 @@ import java.util.List;
 
 @Data
 @Entity
-@Table(name = "availRooms")
+@Table(name = "avail_Rooms")
 public class Available {
     private static final long serialVersionUID = 1L;
 
@@ -21,14 +21,14 @@ public class Available {
     private Room status;
 
     @OneToOne
-    @JoinColumn(name = "roomNumber",nullable = false, unique = true)
+    @JoinColumn(name = "room_Number",nullable = false, unique = true)
     private Room roomNum;
 
     @Column(name="departure_dt")
-    private Timestamp departureDateTime;
+    private Timestamp departure_Date_Time;
 
     @Column(name="arrival_dt")
-    private Timestamp arrivalDateTime;
+    private Timestamp arrival_Date_Time;
 
 
 
@@ -48,27 +48,27 @@ public class Available {
         this.status = status;
     }
 
-    public Room getRoomNum() {
+    public Room getRoom_Num() {
         return roomNum;
     }
 
-    public void setRoomNum(Room roomNum) {
-        this.roomNum = roomNum;
+    public void setRoom_Num(Room room_Num) {
+        this.roomNum = room_Num;
     }
 
-    public Timestamp getDepartureDateTime() {
-        return departureDateTime;
+    public Timestamp getDeparture_Date_Time() {
+        return departure_Date_Time;
     }
 
-    public void setDepartureDateTime(Timestamp departureDateTime) {
-        this.departureDateTime = departureDateTime;
+    public void setDeparture_Date_Time(Timestamp departure_Date_Time) {
+        this.departure_Date_Time = departure_Date_Time;
     }
 
-    public Timestamp getArrivalDateTime() {
-        return arrivalDateTime;
+    public Timestamp getArrival_Date_Time() {
+        return arrival_Date_Time;
     }
 
-    public void setArrivalDateTime(Timestamp arrivalDateTime) {
-        this.arrivalDateTime = arrivalDateTime;
+    public void setArrival_Date_Time(Timestamp arrival_Date_Time) {
+        this.arrival_Date_Time = arrival_Date_Time;
     }
 }

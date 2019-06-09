@@ -10,17 +10,17 @@ import java.util.List;
 
 @Data
 @Entity
-@Table(name = "employeeInfo")
+@Table(name = "employee_Info")
 public class EmployeeInfo implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column (name = "name")
-    private String employeeName;
+    private String name;
 
     @Column (name = "email")
-    private String employeeEmail;
+    private String employee_Email;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn (unique = true)
@@ -38,20 +38,20 @@ public class EmployeeInfo implements Serializable {
         this.id = id;
     }
 
-    public String getEmployeeName() {
-        return employeeName;
+    public String getName() {
+        return name;
     }
 
-    public void setEmployeeName(String employeeName) {
-        this.employeeName = employeeName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getEmployeeEmail() {
-        return employeeEmail;
+    public String getEmployee_Email() {
+        return employee_Email;
     }
 
-    public void setEmployeeEmail(String employeeEmail) {
-        this.employeeEmail = employeeEmail;
+    public void setEmployee_Email(String employee_Email) {
+        this.employee_Email = employee_Email;
     }
 
     public Position getPosition() {
