@@ -12,13 +12,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.thymeleaf.expression.Strings;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
 
 @SpringBootApplication
-public class DemoApplication implements CommandLineRunner{
+public class DemoApplication{
 
 	public static void main(String[] args) {
 
@@ -27,24 +28,8 @@ public class DemoApplication implements CommandLineRunner{
 
 	private static final Logger log = LoggerFactory.getLogger(DemoApplication.class);
 
-	/*
-	@Autowired
-	FacilityRepository facRep;
-	AvailableRepository avaRep;
-	ConfirmationRepository conRep;
-	EmployeeInfoRepository empRep;
-	GuestRepository gueRep;
-	HotelRepository hotRep;
-	PositionRepository posRep;
-	ReservationRepository resRep;
-	RoomTypeRepository rtRep;
-	RoomRepository roomRep;
-
-	 */
-
-
 	@Bean
-	public CommandLineRunner demoroom(RoomRepository repository) {
+	public CommandLineRunner demoRoom(RoomRepository repository) {
 		return (args) -> {
 			log.info("room found with findAll():");
 			log.info("-------------------------------");
@@ -56,7 +41,7 @@ public class DemoApplication implements CommandLineRunner{
 	}
 
 	@Bean
-	public CommandLineRunner demort(RoomTypeRepository repository) {
+	public CommandLineRunner demoRt(RoomTypeRepository repository) {
 		return (args) -> {
 			log.info("roomType found with findAll():");
 			log.info("-------------------------------");
@@ -68,7 +53,7 @@ public class DemoApplication implements CommandLineRunner{
 	}
 
 	@Bean
-	public CommandLineRunner demofac(FacilityRepository repository) {
+	public CommandLineRunner demoFac(FacilityRepository repository) {
 		return (args) -> {
 			log.info("Facilities found with findAll():");
 			log.info("-------------------------------");
@@ -80,7 +65,7 @@ public class DemoApplication implements CommandLineRunner{
 	}
 
 	@Bean
-	public CommandLineRunner demoava(AvailableRepository repository) {
+	public CommandLineRunner demoAva(AvailableRepository repository) {
 		return (args) -> {
 			log.info("Available found with findAll():");
 			log.info("-------------------------------");
@@ -92,7 +77,7 @@ public class DemoApplication implements CommandLineRunner{
 	}
 
 	@Bean
-	public CommandLineRunner democon(ConfirmationRepository repository) {
+	public CommandLineRunner demoCon(ConfirmationRepository repository) {
 		return (args) -> {
 			log.info("confirmation found with findAll():");
 			log.info("-------------------------------");
@@ -104,7 +89,7 @@ public class DemoApplication implements CommandLineRunner{
 	}
 
 	@Bean
-	public CommandLineRunner demoemp(EmployeeInfoRepository repository) {
+	public CommandLineRunner demoEmp(EmployeeInfoRepository repository) {
 		return (args) -> {
 			log.info("employeeInfo found with findAll():");
 			log.info("-------------------------------");
@@ -116,7 +101,7 @@ public class DemoApplication implements CommandLineRunner{
 	}
 
 	@Bean
-	public CommandLineRunner demogue(GuestRepository repository) {
+	public CommandLineRunner demoGue(GuestRepository repository) {
 		return (args) -> {
 			log.info("guest found with findAll():");
 			log.info("-------------------------------");
@@ -128,7 +113,7 @@ public class DemoApplication implements CommandLineRunner{
 	}
 
 	@Bean
-	public CommandLineRunner demohot(HotelRepository repository) {
+	public CommandLineRunner demoHot(HotelRepository repository) {
 		return (args) -> {
 			log.info("hotel found with findAll():");
 			log.info("-------------------------------");
@@ -140,7 +125,7 @@ public class DemoApplication implements CommandLineRunner{
 	}
 
 	@Bean
-	public CommandLineRunner demopos(PositionRepository repository) {
+	public CommandLineRunner demoPos(PositionRepository repository) {
 		return (args) -> {
 			log.info("position found with findAll():");
 			log.info("-------------------------------");
@@ -152,7 +137,7 @@ public class DemoApplication implements CommandLineRunner{
 	}
 
 	@Bean
-	public CommandLineRunner demores(ReservationRepository repository) {
+	public CommandLineRunner demoRes(ReservationRepository repository) {
 		return (args) -> {
 			log.info("reservation found with findAll():");
 			log.info("-------------------------------");
@@ -165,31 +150,12 @@ public class DemoApplication implements CommandLineRunner{
 
 
 
-
-/*
-
-	public void demoSQL(String...args) throws Exception {
-		log.info("facility", facRep.findAll());
-		log.info("roomType", rtRep.findAll());
-		log.info("hotels", hotRep.findAll());
-		log.info("room",roomRep.findAll());
-		log.info("positions", posRep.findAll());
-		log.info("employeeInfo", empRep.findAll());
-		log.info("guests", gueRep.findAll());
-		log.info("reservation", resRep.findAll());
-		log.info("available", avaRep.findAll());
-		log.info("confirmation", conRep.findAll());
-	}
-
-*/
-
-
 	@Autowired
 	RoomType_NoSQL_Repo rooming;
 
 
 	@Autowired
-	Hotel_NoSQL_Repo hotelrepo;
+	Hotel_NoSQL_Repo hotelRepo;
 
 	@Autowired
 	Position_NoSQL_Repo position;
@@ -200,41 +166,99 @@ public class DemoApplication implements CommandLineRunner{
 	@Autowired
 	EmployeeInfo_NoSQL_Repo employee;
 
-	@Override
-	public void run(String... args) throws Exception{
-		hotelrepo.deleteAll();
-		rooming.deleteAll();
-		position.deleteAll();
-		facility.deleteAll();
-		employee.deleteAll();
-		employee.saveAll(Arrays.asList(new EmployeeInfo_NoSQL("Peter June", "pjune@hotels.com"),
-				(new EmployeeInfo_NoSQL("Cici Leader", "cleader@hotels.com")),
-				(new EmployeeInfo_NoSQL("Carrie Austin", "caustin@hotels.com")),
-				new EmployeeInfo_NoSQL("Austin James", "ajames@hotels.com")));
 
-		List<EmployeeInfo_NoSQL> managers = Arrays.asList(employee.findAllByEmployeeName("Peter June"));
-		List<EmployeeInfo_NoSQL> cooks = Arrays.asList(employee.findAllByEmployeeName("Cici Leader"));
-		List<EmployeeInfo_NoSQL> frontDesk = Arrays.asList(employee.findAllByEmployeeName("Carrie Austin"), employee.findAllByEmployeeName("Austin James"));
-		List<EmployeeInfo_NoSQL> houseKeeping = Arrays.asList(employee.findAllByEmployeeName(""));
+	ArrayList<EmployeeInfo_NoSQL> managers = new ArrayList<>();
+	ArrayList<EmployeeInfo_NoSQL> cooks = new ArrayList<>();
+	ArrayList<EmployeeInfo_NoSQL> frontDesk = new ArrayList<>();
+	ArrayList<EmployeeInfo_NoSQL> houseKeeping = new ArrayList<>();
 
-		facility.saveAll(Arrays.asList(new Facility_NoSQL("Pool", true)));
-		position.saveAll(Arrays.asList(new Position_NoSQL("Manager", 50000, managers),
-				new Position_NoSQL("Cook", 50000, cooks),
-				new Position_NoSQL("Front Desk", 25000, frontDesk),
-				new Position_NoSQL("House Keeping", 35000, houseKeeping)));
-		rooming.saveAll(Arrays.asList(new RoomType_NoSQL("Single", false, 90),
-				new RoomType_NoSQL("Double",false,100),
-				new RoomType_NoSQL("Triple",false,110),
-				new RoomType_NoSQL("Quad", false,120)));
-		hotelrepo.saveAll(Arrays.asList(
-				new Hotel_NoSQL("Chicago", "1155 N Sheffield Ave., Chicago, IL 60614",
-						rooming.findAll(), position.findAll(), facility.findAll())));
 
-		List<Hotel_NoSQL> hotels = null;
 
-		hotels = hotelrepo.findAll();
-		hotels.forEach((System.out::println));
+
+
+	@Bean
+	public CommandLineRunner noSqlDemoRt(RoomType_NoSQL_Repo repository) {
+		repository.deleteAll();
+		return (args) -> {
+			// save a review
+			repository.deleteAll();
+			RoomType_NoSQL room1 = new RoomType_NoSQL("Single", false, 90);
+			RoomType_NoSQL room2 = new RoomType_NoSQL("Double",false,100);
+			RoomType_NoSQL room3 = new RoomType_NoSQL("Triple",false,110);
+			RoomType_NoSQL room4 = new RoomType_NoSQL("Quad", false,120);
+			repository.save(room1);
+			repository.save(room2);
+			repository.save(room3);
+			repository.save(room4);
+		};
 	}
+
+	@Bean
+	public CommandLineRunner noSqlDemoFac(Facility_NOSQL_Repo repository) {
+		repository.deleteAll();
+		return (args) -> {
+			// save a review
+			repository.deleteAll();
+			Facility_NoSQL facility1 = new Facility_NoSQL("Pool", true);
+			repository.save(facility1);
+		};
+	}
+
+	@Bean
+	public CommandLineRunner noSqlDemoEmp(EmployeeInfo_NoSQL_Repo repository) {
+		repository.deleteAll();
+		return (args) -> {
+			// save a review
+			repository.deleteAll();
+			EmployeeInfo_NoSQL employee1 = new EmployeeInfo_NoSQL("Peter June", "pjune@hotels.com");
+			EmployeeInfo_NoSQL employee2 = new EmployeeInfo_NoSQL("Cici Leader", "cleader@hotels.com");
+			EmployeeInfo_NoSQL employee3 = new EmployeeInfo_NoSQL("Carrie Austin", "caustin@hotels.com");
+			EmployeeInfo_NoSQL employee4 = new EmployeeInfo_NoSQL("Austin James", "ajames@hotels.com");
+
+			repository.save(employee1);
+			repository.save(employee2);
+			repository.save(employee3);
+			repository.save(employee4);
+
+			managers.add(employee1);
+			cooks.add(employee2);
+			frontDesk.add(employee3);
+			frontDesk.add(employee4);
+			houseKeeping.add(null);
+		};
+	}
+
+	@Bean
+	public CommandLineRunner noSqlDemoPos(Position_NoSQL_Repo repository) {
+		repository.deleteAll();
+		return (args) -> {
+			// save a review
+			repository.deleteAll();
+			Position_NoSQL position1 = new Position_NoSQL("Manager", 50000, managers);
+			Position_NoSQL position2 = new Position_NoSQL("Cook", 50000, cooks);
+			Position_NoSQL position3 = new Position_NoSQL("Front Desk", 25000, frontDesk);
+			Position_NoSQL position4 = new Position_NoSQL("House Keeping", 35000, houseKeeping);
+
+			repository.save(position1);
+			repository.save(position2);
+			repository.save(position3);
+			repository.save(position4);
+		};
+	}
+
+	@Bean
+	public CommandLineRunner noSqlDemoHot(Hotel_NoSQL_Repo repository) {
+		repository.deleteAll();
+		return (args) -> {
+			// save a review
+			repository.deleteAll();
+			Hotel_NoSQL hotel1 = new Hotel_NoSQL("Chicago", "1155 N Sheffield Ave., Chicago, IL 60614",
+					rooming.findAll(), position.findAll(), facility.findAll());
+
+			repository.save(hotel1);
+		};
+	}
+
 
 
 }

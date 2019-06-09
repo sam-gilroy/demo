@@ -22,8 +22,8 @@ public class EmployeeInfo implements Serializable {
     @Column (name = "email")
     private String employee_Email;
 
-    @OneToOne
-    @JoinColumn(name = "position_id")
+    @ManyToOne
+    @JoinColumn (name = "position_id",nullable = false)
     private Position position_id;
 
     @OneToMany(mappedBy = "employee_id", cascade = CascadeType.ALL, fetch = FetchType.LAZY)

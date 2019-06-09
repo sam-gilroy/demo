@@ -28,8 +28,10 @@ public class Confirmation {
     @Column (name = "total_Owed")
     private int total_Owed;
 
+
     @ManyToOne
-    @JoinColumn(name = "room_Num_Avail",nullable = false)
+    @JoinColumn(name = "room_Num_Avail")
+
     private Room room_Num_Avail;
 
     public Long getId() {

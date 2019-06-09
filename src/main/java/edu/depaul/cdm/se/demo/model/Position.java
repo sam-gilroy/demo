@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @Entity
@@ -21,8 +22,9 @@ public class Position {
     @Column (name = "salary")
     private int salary;
 
-    @OneToOne(mappedBy = "position_id", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private EmployeeInfo position_id;
+    @OneToMany(mappedBy = "position_id", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @ToString.Exclude
+    private List<EmployeeInfo> position_id;
 
     public Long getId() {
         return id;
@@ -40,11 +42,11 @@ public class Position {
         this.positionName = position_Name;
     }
 
-    public EmployeeInfo getPosition_id() {
+    public List<EmployeeInfo> getPosition_id() {
         return position_id;
     }
 
-    public void setPosition_id(EmployeeInfo position_id) {
+    public void setPosition_id(List<EmployeeInfo> position_id) {
         this.position_id = position_id;
     }
 

@@ -16,17 +16,12 @@ public class Available {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToOne
-    @JoinColumn(name = "status",nullable = false)
-    private Room status;
+    @Column
+    private boolean status;
 
     @ManyToOne
-    @JoinColumn (name = "room_Num",nullable = false)
-<<<<<<< HEAD
+    @JoinColumn (name = "room_Num")
     private Room room_Num;
-=======
-    private Room roomNum;
->>>>>>> 4ed9feb9d313aadd03c368517e9730061978f9be
 
     @Column(name="departure_dt")
     private Timestamp departure_Date_Time;
@@ -44,11 +39,11 @@ public class Available {
         this.id = id;
     }
 
-    public Room getStatus() {
+    public boolean getStatus() {
         return status;
     }
 
-    public void setStatus(Room status) {
+    public void setStatus(boolean status) {
         this.status = status;
     }
 

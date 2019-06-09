@@ -36,8 +36,8 @@ UPDATE confirmation SET total_Owed = (select amount_Total from reservation where
 UPDATE confirmation SET total_Owed = (select amount_Total from reservation where id = 4) where reservation_id = 4;
 UPDATE confirmation SET total_Owed = (select amount_Total from reservation where id = 5) where reservation_id = 5;
 
-UPDATE confirmation SET room_Num_Avail = (select num from Room where room_Number_Type = (select room_Type_Reserve from reservation where id = 1)) where reservation_id = 1;
-UPDATE confirmation SET room_Num_Avail = (select num from Room where room_Number_Type = (select room_Type_Reserve from reservation where id = 2)) where reservation_id = 2;
-UPDATE confirmation SET room_Num_Avail = (select num from Room where room_Number_Type = (select room_Type_Reserve from reservation where id = 3)) where reservation_id = 3;
-UPDATE confirmation SET room_Num_Avail = (select num from Room where room_Number_Type = (select room_Type_Reserve from reservation where id = 4)) where reservation_id = 4;
-UPDATE confirmation SET room_Num_Avail = (select num from Room where room_Number_Type = (select room_Type_Reserve from reservation where id = 5)) where reservation_id = 5;
+UPDATE confirmation SET room_Num_Avail = (select id from Room where room_Number_Type = (select room_Type_Reserve from reservation where id = 1)) where reservation_id = 1;
+UPDATE confirmation SET room_Num_Avail = (select id from Room where room_Number_Type = (select room_Type_Reserve from reservation where id = 2)) where reservation_id = 2;
+UPDATE confirmation SET room_Num_Avail = (select id from Room where room_Number_Type = (select room_Type_Reserve from reservation where id = 3)) where reservation_id = 3;
+UPDATE confirmation SET room_Num_Avail = (select id from Room where room_Number_Type = (select room_Type_Reserve from reservation where id = 4)) where reservation_id = 4;
+UPDATE confirmation SET room_Num_Avail = (select id from Room where room_Number_Type = (select room_Type_Reserve from reservation where id = 5)) where reservation_id = 5;

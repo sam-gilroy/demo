@@ -5,9 +5,9 @@
 <body>
 	<h1>Make A Reservation</h1>
 	<form method="POST" action="home.html" th:action="@{/create}" th:object="${reservation}">
-		Start Date: <input type="date" name="sdate" th:field="*{dateIn}"><br/>
-		End Date: <input type="date" name="edate" th:field="*{dateOut}"><br/>
-		Room Type: <select name="roomType" th:field="*{roomTypeReserve}">
+		Start Date: <input type="date" name="sdate" th:field="*{dateIn}" required><br/>
+		End Date: <input type="date" name="edate" th:field="*{dateOut}" required><br/>
+		Room Type: <select name="roomType" th:field="*{roomTypeReserve}" required>
 			<option th:each="room : ${roomTypeList}" th:attr = "value= ${room}" th:text="${room.roomSize}"></option>
 		</select><br/>
 		<input type="submit" value="Submit">
@@ -15,3 +15,4 @@
 	<a th:href="@{home}"><button>Back</button></a>
 </body>
 </html>
+
