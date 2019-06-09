@@ -1,15 +1,15 @@
 update facility set hotel = (select id from hotels where name = 'Chicago');
 update room_Type set hotel = (select id from hotels where name = 'Chicago');
 
-UPDATE employee_Info SET position = (select id from position where position_Name = 'Manager') WHERE id = 1;
-UPDATE employee_Info SET position = (select id from position where position_Name = 'Front Desk') WHERE id = 3;
-UPDATE employee_Info SET position = (select id from position where position_Name = 'Front Desk') WHERE id = 4;
-UPDATE employee_Info SET position = (select id from position where position_Name = 'Cook') WHERE id = 2;
+UPDATE employee_Info SET position_id = (select id from position where position_Name = 'Manager') WHERE id = 1;
+UPDATE employee_Info SET position_id = (select id from position where position_Name = 'Front Desk') WHERE id = 3;
+UPDATE employee_Info SET position_id = (select id from position where position_Name = 'Front Desk') WHERE id = 4;
+UPDATE employee_Info SET position_id = (select id from position where position_Name = 'Cook') WHERE id = 2;
 
-UPDATE room SET room_Number_Type = (select id from room_Type where room_Size = 'Single') WHERE num = 101;
-UPDATE room SET room_Number_Type = (select id from room_Type where room_Size = 'Double') WHERE num = 102;
-UPDATE room SET room_Number_Type = (select id from room_Type where room_Size = 'Triple') WHERE num = 103;
-UPDATE room SET room_Number_Type = (select id from room_Type where room_Size = 'Quad') WHERE num = 104;
+UPDATE room SET room_Number_Type = (select id from room_Type where room_Size = 'Single') WHERE id = 1;
+UPDATE room SET room_Number_Type = (select id from room_Type where room_Size = 'Double') WHERE id = 2;
+UPDATE room SET room_Number_Type = (select id from room_Type where room_Size = 'Triple') WHERE id = 3;
+UPDATE room SET room_Number_Type = (select id from room_Type where room_Size = 'Quad') WHERE id = 4;
 
 UPDATE reservation SET room_Type_Reserve = (select id from room_Type where room_Size = 'Single') WHERE id = 1;
 UPDATE reservation SET room_Type_Reserve = (select id from room_Type where room_Size = 'Double') WHERE id = 2;

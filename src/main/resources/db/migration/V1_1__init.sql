@@ -32,12 +32,13 @@ create table employee_Info (
                               id int primary key auto_increment,
                               name varchar(50),
                               email varchar(50),
-                              position long
+                              position_id long
 );
 
 CREATE table position (
                           id int primary key auto_increment,
-                          position_Name varchar(50)
+                          position_Name varchar(50),
+                          salary int
 );
 
 CREATE TABLE room (
@@ -49,7 +50,7 @@ CREATE TABLE room (
 
 create table available (
                            id int primary key auto_increment,
-                           room_Num int,
+                           room_number int,
                            arrival_dt timestamp,
                            departure_dt timestamp,
                            status boolean

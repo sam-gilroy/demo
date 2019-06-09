@@ -22,9 +22,9 @@ public class EmployeeInfo implements Serializable {
     @Column (name = "email")
     private String employee_Email;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn (unique = true)
-    private Position position;
+    @OneToOne
+    @JoinColumn(name = "position_id")
+    private Position position_id;
 
     @OneToMany(mappedBy = "employee_id", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @ToString.Exclude
@@ -54,12 +54,12 @@ public class EmployeeInfo implements Serializable {
         this.employee_Email = employee_Email;
     }
 
-    public Position getPosition() {
-        return position;
+    public Position getPosition_id() {
+        return position_id;
     }
 
-    public void setPosition(Position position) {
-        this.position = position;
+    public void setPosition_id(Position position_id) {
+        this.position_id = position_id;
     }
 
     public List<Reservation> getEmployee_id() {

@@ -8,7 +8,7 @@ import java.util.List;
 
 @Data
 @Entity
-@Table(name = "reserve")
+@Table(name = "reservation")
 public class Reservation {
     private static final long serialVersionUID = 1L;
 
@@ -28,9 +28,9 @@ public class Reservation {
 
     @OneToOne
     @JoinColumn(name = "room_Type_Reserve",nullable = false)
-    private RoomType room_Type_Reserve;
+    private Room_Type room_Type_Reserve;
 
-    @Column (name = "amount__Total")
+    @Column (name = "amount_Total")
     private int amount_Total;
 
     @ManyToOne
@@ -85,11 +85,11 @@ public class Reservation {
         this.date_Out = date_Out;
     }
 
-    public RoomType getRoom_Type_Reserve() {
+    public Room_Type getRoom_Type_Reserve() {
         return room_Type_Reserve;
     }
 
-    public void setRoom_Type_Reserve(RoomType room_Type_Reserve) {
+    public void setRoom_Type_Reserve(Room_Type room_Type_Reserve) {
         this.room_Type_Reserve = room_Type_Reserve;
     }
 

@@ -12,8 +12,8 @@ import java.util.Set;
 
 @Data
 @Entity
-@Table(name = "room_Type")
-public class RoomType{
+@Table(name = "room_type")
+public class Room_Type{
     private static final long serialVersionUID = 1L;
 
     @Id
@@ -33,12 +33,12 @@ public class RoomType{
     @JoinColumn (name = "hotel",nullable = false)
     private Hotel hotel_rooms;
 
-    @OneToMany(mappedBy = "room_Number_Type", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany (mappedBy = "room_Number_Type", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @ToString.Exclude
     private List<Room> room_Number_Type;
 
-    @OneToOne(mappedBy = "room_Type_Reserve")
-    private Reservation room_Type_Reserve;
+    @OneToMany(mappedBy = "roomTypeReserve", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private List<Reservation> roomTypeReserve;
 
     public Long getId() {
         return id;
@@ -88,12 +88,12 @@ public class RoomType{
         this.room_Number_Type = room_Number_Type;
     }
 
-    public Reservation getRoom_Type_Reserve() {
-        return room_Type_Reserve;
+    public List<Reservation> getRoomTypeReserve() {
+        return roomTypeReserve;
     }
 
-    public void setRoom_Type_Reserve(Reservation room_Type_Reserve) {
-        this.room_Type_Reserve = room_Type_Reserve;
+    public void setRoomTypeReserve(List<Reservation> roomTypeReserve) {
+        this.roomTypeReserve = roomTypeReserve;
     }
 }
 

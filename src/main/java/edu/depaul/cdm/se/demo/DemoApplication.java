@@ -27,6 +27,7 @@ public class DemoApplication implements CommandLineRunner{
 
 	private static final Logger log = LoggerFactory.getLogger(DemoApplication.class);
 
+	/*
 	@Autowired
 	FacilityRepository facRep;
 	AvailableRepository avaRep;
@@ -39,20 +40,131 @@ public class DemoApplication implements CommandLineRunner{
 	RoomTypeRepository rtRep;
 	RoomRepository roomRep;
 
-
+	 */
 
 
 	@Bean
-	public CommandLineRunner demo(FacilityRepository repository) {
+	public CommandLineRunner demoroom(RoomRepository repository) {
 		return (args) -> {
-			log.info("Facilities found with findAll():");
+			log.info("room found with findAll():");
 			log.info("-------------------------------");
-			repository.findAll().forEach((facility) -> {
-				log.info(facility.toString());
+			repository.findAll().forEach((room) -> {
+				//log.info(room.toString());
 			});
 			log.info("");
 		};
 	}
+
+	@Bean
+	public CommandLineRunner demort(RoomTypeRepository repository) {
+		return (args) -> {
+			log.info("roomType found with findAll():");
+			log.info("-------------------------------");
+			repository.findAll().forEach((roomType) -> {
+			//	log.info(roomType.toString());
+			});
+			log.info("");
+		};
+	}
+
+	@Bean
+	public CommandLineRunner demofac(FacilityRepository repository) {
+		return (args) -> {
+			log.info("Facilities found with findAll():");
+			log.info("-------------------------------");
+			repository.findAll().forEach((facility) -> {
+			//	log.info(facility.toString());
+			});
+			log.info("");
+		};
+	}
+
+	@Bean
+	public CommandLineRunner demoava(AvailableRepository repository) {
+		return (args) -> {
+			log.info("Available found with findAll():");
+			log.info("-------------------------------");
+			repository.findAll().forEach((available) -> {
+			//	log.info(available.toString());
+			});
+			log.info("");
+		};
+	}
+
+	@Bean
+	public CommandLineRunner democon(ConfirmationRepository repository) {
+		return (args) -> {
+			log.info("confirmation found with findAll():");
+			log.info("-------------------------------");
+			repository.findAll().forEach((confirmation) -> {
+			//	log.info(confirmation.toString());
+			});
+			log.info("");
+		};
+	}
+
+	@Bean
+	public CommandLineRunner demoemp(EmployeeInfoRepository repository) {
+		return (args) -> {
+			log.info("employeeInfo found with findAll():");
+			log.info("-------------------------------");
+			repository.findAll().forEach((employeeInfo) -> {
+			//	log.info(employeeInfo.toString());
+			});
+			log.info("");
+		};
+	}
+
+	@Bean
+	public CommandLineRunner demogue(GuestRepository repository) {
+		return (args) -> {
+			log.info("guest found with findAll():");
+			log.info("-------------------------------");
+			repository.findAll().forEach((guest) -> {
+			//	log.info(guest.toString());
+			});
+			log.info("");
+		};
+	}
+
+	@Bean
+	public CommandLineRunner demohot(HotelRepository repository) {
+		return (args) -> {
+			log.info("hotel found with findAll():");
+			log.info("-------------------------------");
+			repository.findAll().forEach((hotel) -> {
+			//	log.info(hotel.toString());
+			});
+			log.info("");
+		};
+	}
+
+	@Bean
+	public CommandLineRunner demopos(PositionRepository repository) {
+		return (args) -> {
+			log.info("position found with findAll():");
+			log.info("-------------------------------");
+			repository.findAll().forEach((position) -> {
+			//	log.info(position.toString());
+			});
+			log.info("");
+		};
+	}
+
+	@Bean
+	public CommandLineRunner demores(ReservationRepository repository) {
+		return (args) -> {
+			log.info("reservation found with findAll():");
+			log.info("-------------------------------");
+			repository.findAll().forEach((reservation) -> {
+			//	log.info(reservation.toString());
+			});
+			log.info("");
+		};
+	}
+
+
+
 
 /*
 

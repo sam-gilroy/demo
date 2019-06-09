@@ -8,7 +8,7 @@ import java.util.List;
 
 @Data
 @Entity
-@Table(name = "avail_Rooms")
+@Table(name = "available")
 public class Available {
     private static final long serialVersionUID = 1L;
 
