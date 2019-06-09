@@ -22,7 +22,11 @@ public class Available {
 
     @ManyToOne
     @JoinColumn (name = "room_Num",nullable = false)
+<<<<<<< HEAD
     private Room room_Num;
+=======
+    private Room roomNum;
+>>>>>>> 4ed9feb9d313aadd03c368517e9730061978f9be
 
     @Column(name="departure_dt")
     private Timestamp departure_Date_Time;

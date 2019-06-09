@@ -28,11 +28,19 @@ INSERT INTO room (num, available) values (102, true);
 INSERT INTO room (num, available) values (103, true);
 INSERT INTO room (num, available) values (104, false);
 
+<<<<<<< HEAD
 INSERT INTO available (room_Num, status, arrival_dt, departure_dt) values (1, false, '2019-04-02 12:00:00.000', '2019-04-10 12:00:00.000');
 INSERT INTO available (room_Num, status, arrival_dt, departure_dt) values (2, false, '2019-05-11 12:00:00.000', '2019-05-12 12:00:00.000');
 INSERT INTO available (room_Num, status, arrival_dt, departure_dt) values (3, false, '2019-05-19 12:00:00.000', '2019-05-25 12:00:00.000');
 INSERT INTO available (room_Num, status, arrival_dt, departure_dt) values (4, false, '2019-05-20 12:00:00.000', '2019-05-25 12:00:00.000');
 INSERT INTO available (room_Num, status, arrival_dt, departure_dt) values (4, false, '2019-05-10 12:00:00.000', '2019-06-10 12:00:00.000');
+=======
+INSERT INTO available (room_num, status, arrival_dt, departure_dt) values (1, false, '2019-04-02 12:00:00.000', '2019-04-10 12:00:00.000');
+INSERT INTO available (room_num, status, arrival_dt, departure_dt) values (2, false, '2019-05-11 12:00:00.000', '2019-05-12 12:00:00.000');
+INSERT INTO available (room_num, status, arrival_dt, departure_dt) values (3, false, '2019-05-19 12:00:00.000', '2019-05-25 12:00:00.000');
+INSERT INTO available (room_num, status, arrival_dt, departure_dt) values (4, false, '2019-05-20 12:00:00.000', '2019-05-25 12:00:00.000');
+INSERT INTO available (room_num, status, arrival_dt, departure_dt) values (4, false, '2019-05-10 12:00:00.000', '2019-06-10 12:00:00.000');
+>>>>>>> 4ed9feb9d313aadd03c368517e9730061978f9be
 
 INSERT INTO reservation (guest_id, date_In, date_Out) VALUES (1, '2019-04-02 12:00:00.000', '2019-04-10 12:00:00.000');
 INSERT INTO reservation (guest_id, date_In, date_Out) VALUES (2, '2019-05-11 12:00:00.000', '2019-05-12 12:00:00.000');
