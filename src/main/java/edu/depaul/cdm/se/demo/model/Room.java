@@ -8,7 +8,7 @@ import java.util.List;
 
 @Data
 @Entity
-@Table(name = "roomNumbers")
+@Table(name = "room")
 public class Room {
     private static final long serialVersionUID = 1L;
 
@@ -23,8 +23,8 @@ public class Room {
     private Available status;
 
     @ManyToOne
-    @JoinColumn (name = "roomNumberType",nullable = false)
-    private RoomType roomNumberType;
+    @JoinColumn (name = "room_Number_Type",nullable = false)
+    private Room_Type room_Number_Type;
 
     @OneToOne(mappedBy = "roomNum", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Available roomNum;
@@ -75,11 +75,11 @@ public class Room {
         this.roomNum = roomNum;
     }
 
-    public RoomType getRoomNumberType() {
-        return roomNumberType;
+    public Room_Type getRoom_Number_Type() {
+        return room_Number_Type;
     }
 
-    public void setRoomNumberType(RoomType roomNumberType) {
-        this.roomNumberType = roomNumberType;
+    public void setRoom_Number_Type(Room_Type room_Number_Type) {
+        this.room_Number_Type = room_Number_Type;
     }
 }

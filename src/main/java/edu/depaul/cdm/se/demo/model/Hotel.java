@@ -16,7 +16,7 @@ public class Hotel implements Serializable {
 
     @OneToMany(mappedBy = "hotel_rooms", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @ToString.Exclude
-    private List<RoomType> hotel_rooms;
+    private List<Room_Type> hotel_rooms;
 
     @OneToMany(mappedBy = "hotel_facilities", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @ToString.Exclude
@@ -40,7 +40,7 @@ public class Hotel implements Serializable {
         this.id = id;
     }
 
-    public List<RoomType> getHotel_rooms() {
+    public List<Room_Type> getHotel_rooms() {
         return hotel_rooms;
     }
 
@@ -54,14 +54,6 @@ public class Hotel implements Serializable {
 
     public void setHotel_id(List<Reservation> hotel_id) {
         this.hotel_id = hotel_id;
-    }
-
-    public List<RoomType> gethotel_rooms() {
-        return hotel_rooms;
-    }
-
-    public void sethotel_rooms(List<RoomType> hotel_rooms) {
-        this.hotel_rooms = hotel_rooms;
     }
 
     public String getHotelName() {

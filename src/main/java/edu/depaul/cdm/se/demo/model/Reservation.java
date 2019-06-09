@@ -32,7 +32,7 @@ public class Reservation {
 
     @OneToOne
     @JoinColumn(name = "roomTypeReserve",nullable = false)
-    private RoomType roomTypeReserve;
+    private Room_Type roomTypeReserve;
 
     @Column (name = "amountTotal")
     private int amountTotal;
@@ -89,11 +89,11 @@ public class Reservation {
         this.dateOut = dateOut;
     }
 
-    public RoomType getRoomTypeReserve() {
+    public Room_Type getRoomTypeReserve() {
         return roomTypeReserve;
     }
 
-    public void setRoomTypeReserve(RoomType roomTypeReserve) {
+    public void setRoomTypeReserve(Room_Type roomTypeReserve) {
         this.roomTypeReserve = roomTypeReserve;
     }
 
