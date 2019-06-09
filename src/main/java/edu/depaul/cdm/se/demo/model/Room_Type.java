@@ -20,14 +20,14 @@ public class Room_Type{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column (name = "roomSize")
+    @Column (name = "room_Size")
     private String roomSize;
 
     @Column (name = "smoking")
     private boolean smoking;
 
-    @Column (name = "roomRate")
-    private Integer roomRate;
+    @Column (name = "room_Rate")
+    private Integer room_Rate;
 
     @ManyToOne
     @JoinColumn (name = "hotel",nullable = false)
@@ -48,12 +48,12 @@ public class Room_Type{
         this.id = id;
     }
 
-    public String getRoomSize() {
+    public String getRoom_Size() {
         return roomSize;
     }
 
-    public void setRoomSize(String roomSize) {
-        this.roomSize = roomSize;
+    public void setRoom_Size(String room_Size) {
+        this.roomSize = room_Size;
     }
 
     public boolean isSmoking() {
@@ -64,12 +64,12 @@ public class Room_Type{
         this.smoking = smoking;
     }
 
-    public Integer getRoomRate() {
-        return roomRate;
+    public Integer getRoom_Rate() {
+        return room_Rate;
     }
 
-    public void setRoomRate(Integer roomRate) {
-        this.roomRate = roomRate;
+    public void setRoom_Rate(Integer room_Rate) {
+        this.room_Rate = room_Rate;
     }
 
     public Hotel getHotel_rooms() {

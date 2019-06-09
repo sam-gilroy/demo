@@ -25,12 +25,12 @@ public class Confirmation {
     @Column(name="guest_id")
     private long guest_id;
 
-    @Column (name = "totalOwed")
-    private int totalOwed;
+    @Column (name = "total_Owed")
+    private int total_Owed;
 
     @ManyToOne
-    @JoinColumn(name = "roomNumAvail",nullable = false)
-    private Room roomNumAvail;
+    @JoinColumn(name = "room_Num_Avail",nullable = false)
+    private Room room_Num_Avail;
 
     public Long getId() {
         return id;
@@ -56,19 +56,19 @@ public class Confirmation {
         this.guest_id = guest_id;
     }
 
-    public int getTotalOwed() {
-        return totalOwed;
+    public int getTotal_Owed() {
+        return total_Owed;
     }
 
-    public void setTotalOwed(int totalOwed) {
-        this.totalOwed = totalOwed;
+    public void setTotal_Owed(int total_Owed) {
+        this.total_Owed = total_Owed;
     }
 
-    public Room getRoomNumAvail() {
-        return roomNumAvail;
+    public Room getRoom_Num_Avail() {
+        return room_Num_Avail;
     }
 
-    public void setRoomNumAvail(Room roomNumAvail) {
-        this.roomNumAvail = roomNumAvail;
+    public void setRoom_Num_Avail(Room room_Num_Avail) {
+        this.room_Num_Avail = room_Num_Avail;
     }
 }
