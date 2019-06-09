@@ -9,4 +9,5 @@ import java.util.List;
 @RepositoryRestResource
 public interface ReservationRepository extends CrudRepository<Reservation,Long> {
     List<Reservation> findById(String id);
+    List<Reservation> findAll();
 }

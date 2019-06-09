@@ -1,6 +1,7 @@
 package edu.depaul.cdm.se.demo.Controllers;
 
 import edu.depaul.cdm.se.demo.Repositories.ConfirmationRepository;
+import edu.depaul.cdm.se.demo.Repositories.FacilityRepository;
 import edu.depaul.cdm.se.demo.Repositories.ReservationRepository;
 import edu.depaul.cdm.se.demo.model.Confirmation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,17 +16,16 @@ import java.util.function.BinaryOperator;
 import org.springframework.ui.Model;
 
 @Controller
-@RequestMapping ("/confirm")
 public class Confirmation_controller {
 
     @Autowired
-    private ConfirmationRepository repo;
+    private FacilityRepository repo;
 
     public Confirmation_controller(){}
 
     @GetMapping
     public String showAll(Model model){
         model.addAttribute ("confirmation", repo.findAll());
-        return "/home";
+        return "/edit";
     }
 }

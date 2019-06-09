@@ -6,13 +6,22 @@
 	<h1>Your Reservations</h1>
 	<table style="width:80%">
 		<tr>
-			<th>Reservation No.</th>
-			<th>Start Date</th>
-			<th>End Date</th> 
-			<th>Room Type</th>
-			<th>Location</th>
+			<th scope="col">Reservation No.</th>
+			<th scope="col">Guest No.</th>
+			<th scope="col"> Total Cost </th>
+			<th scope="col"> Room Num </th>
 		</tr>
 		<tr>
+			<tbody>
+			<tr th:each="confirm : ${confirmation}">
+				<td span th:text="${confirm.id}"></td>
+
+				<td span th:text="${confirm.facilityName}"></td>
+				<td span th:text="${confirm.facilityAvail}"></td>
+
+				<td span th:text="${confirm.hotel_facilities}"></td>
+			</tr>
+			</tbody>
 
 		</tr>
 	</table><br /><br />

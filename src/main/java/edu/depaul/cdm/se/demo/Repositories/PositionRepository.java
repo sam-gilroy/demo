@@ -9,4 +9,5 @@ import java.util.List;
 @RepositoryRestResource
 public interface PositionRepository extends CrudRepository<Position, Long> {
     List<Position> findByPositionName(String PositionName);
+    List<Position> findAll();
 }

@@ -9,4 +9,5 @@ import java.util.List;
 @RepositoryRestResource
 public interface GuestRepository extends CrudRepository<Guest, Long> {
     List<Guest> findByGuestName(String GuestName);
+    List<Guest> findAll();
 }

@@ -16,9 +16,7 @@
         </tr>
         </thead>
         <tbody>
-        <tr th:if="${confirmation.empty}">
-            <td colspan="2"> No Reservations Available </td>
-        </tr>
+
         <tr th:each="confirm : ${confirmation}">
             <td span th:text="${confirm.reservation_id}"></td>
             <td span th:text="${confirm.guest_id}"></td>

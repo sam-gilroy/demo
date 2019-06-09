@@ -10,4 +10,5 @@ import java.util.List;
 @RepositoryRestResource
 public interface AvailableRepository extends CrudRepository<Available, Long>  {
     List<Available> findByRoomNumAndStatus(int roomNum, boolean status);
+    List<Available> findAll();
 }

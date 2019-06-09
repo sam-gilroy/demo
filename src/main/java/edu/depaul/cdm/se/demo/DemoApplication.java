@@ -1,5 +1,6 @@
 package edu.depaul.cdm.se.demo;
 
+import com.sun.jdi.InterfaceType;
 import edu.depaul.cdm.se.demo.Repositories.*;
 import edu.depaul.cdm.se.demo.model.*;
 import org.slf4j.Logger;
@@ -26,6 +27,21 @@ public class DemoApplication implements CommandLineRunner{
 
 	private static final Logger log = LoggerFactory.getLogger(DemoApplication.class);
 
+	@Autowired
+	FacilityRepository facRep;
+	AvailableRepository avaRep;
+	ConfirmationRepository conRep;
+	EmployeeInfoRepository empRep;
+	GuestRepository gueRep;
+	HotelRepository hotRep;
+	PositionRepository posRep;
+	ReservationRepository resRep;
+	RoomTypeRepository rtRep;
+	RoomRepository roomRep;
+
+
+
+
 	@Bean
 	public CommandLineRunner demo(FacilityRepository repository) {
 		return (args) -> {
@@ -37,6 +53,23 @@ public class DemoApplication implements CommandLineRunner{
 			log.info("");
 		};
 	}
+
+/*
+
+	public void demoSQL(String...args) throws Exception {
+		log.info("facility", facRep.findAll());
+		log.info("roomType", rtRep.findAll());
+		log.info("hotels", hotRep.findAll());
+		log.info("room",roomRep.findAll());
+		log.info("positions", posRep.findAll());
+		log.info("employeeInfo", empRep.findAll());
+		log.info("guests", gueRep.findAll());
+		log.info("reservation", resRep.findAll());
+		log.info("available", avaRep.findAll());
+		log.info("confirmation", conRep.findAll());
+	}
+
+*/
 
 
 	@Autowired
