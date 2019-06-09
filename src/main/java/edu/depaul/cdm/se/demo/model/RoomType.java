@@ -12,7 +12,7 @@ import java.util.Set;
 
 @Data
 @Entity
-@Table(name = "roomType")
+@Table(name = "room_Type")
 public class RoomType{
     private static final long serialVersionUID = 1L;
 
