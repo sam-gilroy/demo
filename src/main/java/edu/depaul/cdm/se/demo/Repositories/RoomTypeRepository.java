@@ -10,5 +10,6 @@ import java.util.List;
 
 public interface RoomTypeRepository extends CrudRepository<Room_Type,Long> {
     //Room_Type findByRoomSize(String RoomSize);
+    Room_Type findById(long id);
     List<Room_Type> findAll();
 }
