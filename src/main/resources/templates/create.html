@@ -8,7 +8,7 @@
 		Start Date: <input type="date" name="sdate" th:field="*{date_In}" required><br/>
 		End Date: <input type="date" name="edate" th:field="*{date_Out}" required><br/>
 		Room Type: <select name="roomType" th:field="*{room_Type_Reserve}" required>
-			<option th:each="room : ${roomTypeList}" th:attr = "value= ${room}" th:text="${room.room_Size}"></option>
+			<option th:each="room : ${roomTypeList}" th:attr = "value= ${room.id}" th:text="${room.room_Size}"></option>
 		</select><br/>
 		<input type="submit" value="Submit">
 	</form>
