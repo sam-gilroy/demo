@@ -22,7 +22,7 @@ public class Home_controller {
     Hotel_NoSQL_Repo hotelRepo;
 
     @Autowired
-    private ConfirmationRepository confirmationRepository;
+    private ReservationRepository reservationRepository;
 
     @RequestMapping("/home")
     public String home(Model model) {
@@ -39,11 +39,11 @@ public class Home_controller {
     }
 
     @PostMapping("/create")
-    public String createSubmit(@ModelAttribute Reservation reservation) {return "confirm";}
+    public String createSubmit(@ModelAttribute Reservation reservation) {reservationRepository.save(reservation);return "edit";}
 
     @RequestMapping("/confirm")
     public String edit(Model model) {
-        model.addAttribute ("confirmation", confirmationRepository.findAll());
+        model.addAttribute ("confirmation", reservationRepository.findAll());
         return "confirm";
     }
 
